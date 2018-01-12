@@ -10,16 +10,14 @@ import java.util.Date;
 public class Lot {
 
 	//Attributs
-	//TODO : liste de lots, revoir previousLot
-	public Date startDate;
-	public Date endDate;
-	public int duration;
-	public String name;
-	//TODO A REVOIR
-	public Lot previousLot;
+	//TODO : liste de lots
+	private Date startDate;
+	private Date endDate;
+	private int duration;
+	private String name;
 	//TODO ordonner la liste en fonction des dates de début et fin de chaque lot
-	public ArrayList<Personne> personneList = new ArrayList<Personne>();
-	public ArrayList<String> toDoList = new ArrayList<String>();
+	private ArrayList<Personne> personList = new ArrayList<Personne>();
+	private ArrayList<Tache> tasks = new ArrayList<Tache>();
 		
 	//Constructeur
 	public Lot(String name, Date startDate, int duration) {
@@ -32,7 +30,7 @@ public class Lot {
 		this(name, startDate, (int)getDateDiff(startDate, endDate));
 	}
 	
-	//Accesseurs & Mutateurs
+	//-----------Accesseurs------------
 	public Date getStartDate(){
 		return this.startDate;
 	}
@@ -41,10 +39,24 @@ public class Lot {
 		return this.endDate;
 	}
 	
-	public String name(){
+	public int getDuration(){
+		return this.duration;
+	}
+	
+	public String getName(){
 		return this.name;
 	}
-		
+	
+	public ArrayList<Personne> getPersonList(){
+		return this.personList;
+	}
+	
+	public ArrayList<Tache> getTasks(){
+		return this.tasks;
+	}
+	
+	//-------------Mutateurs--------------	
+	
 	public void setStartDate(Date startDate){
 		this.startDate = startDate;
 	}
@@ -53,8 +65,20 @@ public class Lot {
 		this.endDate = endDate;
 	}
 	
+	public void setDuration(int duration){
+		this.duration = duration;
+	}
+	
 	public void setName(String name){
 		this.name = name;
+	}
+	
+	public void setPersonList(ArrayList<Personne> personList){
+		this.personList = personList;
+	}
+	
+	public void setTasks(ArrayList<Tache> tasks){
+		this.tasks = tasks;
 	}
 	
 	//Méthodes

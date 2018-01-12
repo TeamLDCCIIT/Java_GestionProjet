@@ -10,9 +10,9 @@ import java.util.Date;
 public class Personne {
 
 	//Attributs
-	public String lastName;
-	public String firstName;
-	public String function;
+	private String lastName;
+	private String firstName;
+	private String function;
 	
 	//Constructeur
 	public Personne(String lastName, String firstName, String function){
@@ -21,17 +21,30 @@ public class Personne {
 		this.function = function;		
 	}	
 
-	//Accesseurs & Mutateurs
-	public String lastName(){
+	//-----------Accesseurs------------
+	public String getLastName(){
 		return this.lastName;
 	}
 	
-	public String firstName(){
+	public String getFirstName(){
 		return this.firstName;
 	}
 	
-	public String function(){
+	public String getFunction(){
 		return this.function;
+	}
+	
+	//-------------Mutateurs--------------	
+	public void setLastName(String lastName){
+		this.lastName = lastName;
+	}
+	
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
+	}
+	
+	public void setFunction(String function){
+		this.function = function;
 	}
 	
 	//Méthodes

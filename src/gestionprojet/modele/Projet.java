@@ -10,37 +10,54 @@ import java.util.Date;
 public class Projet {
 
 	//Attributs
-	private Date startDate;
-	private Date endDate;
-	public String name;
-	public ArrayList<Lot> lotListe = new ArrayList<Lot>();
-	public Calendrier calendrier;
-	public ArrayList<Personne> lotMembre = new ArrayList<Personne>();
+	private String name;
+	private ArrayList<Lot> lotList = new ArrayList<Lot>();
+	private Calendrier calendar;
+	private ArrayList<Personne> lotResponsible = new ArrayList<Personne>();
 	
 	//Constructeur
-	public Projet(String name, Date startDate, Date endDate, Calendrier calendrier) {
+	//TODO ajouter les listes ?
+	public Projet(String name, Calendrier calendar) {
 		this.name = name;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.calendrier = calendrier;
+		this.calendar = calendar;
 	}
 	
-	//Accesseurs
-	/*
+	//----------------------Accesseurs--------------------------
+	/* 
 	 *Non possibilité de modifier le nom ou les dates du projet 
 	 *--> faciliter le projet au départ 
 	 */
-	
-	public Date getStartDate(){
-		return this.startDate;
-	}
-	
-	public Date getEndDate(){
-		return this.endDate;
-	}
-	
 	public String getName(){
 		return this.name;
+	}
+	
+	public ArrayList<Lot> getLotList(){
+		return this.lotList;
+	}
+	
+	public Calendrier getCalendar(){
+		return this.calendar;
+	}
+	
+	public ArrayList<Personne> getLotResponsible(){
+		return this.lotResponsible;
+	}
+	
+	//------------------------Mutateurs--------------------------	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public void setLotList(ArrayList<Lot> lotList){
+		this.lotList = lotList;
+	}
+	
+	public void setCalendar(Calendrier calendar){
+		this.calendar = calendar;
+	}
+	
+	public void setLotResponsible(ArrayList<Personne> lotResponsible){
+		this.lotResponsible = lotResponsible;
 	}
 	
 	//Méthodes
