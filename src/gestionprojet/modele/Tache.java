@@ -1,8 +1,14 @@
 package gestionprojet.modele;
 
+/*
+ * Par Céline MERAND
+ * Le 12/01/2018
+ */
+
 public class Tache {
 	//Attributs
-	private Personne responsible;
+	private 
+	Personne responsible;
 			
 	//Constructeur
 	public Tache(Personne responsible) {	
