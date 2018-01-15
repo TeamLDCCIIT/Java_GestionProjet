@@ -5,18 +5,23 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import gestionprojet.modele.Projet;
+
 public class FenetreGestionDeProjet extends JFrame {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Application Gestion de Projet";
 //-------------Attributs-------------
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
+	private Projet currentProjet;
 //-------------Constructeur-------------
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.initMenuBar();
+		FenetreCreationProjet test = new FenetreCreationProjet();
+		test.setVisible(true);
 		this.pack();
 	}
 //-------------Getter-------------	
@@ -27,6 +32,10 @@ public class FenetreGestionDeProjet extends JFrame {
 		return instance;
 	}
 	
+//-------------Setter-------------
+public void setProjet(Projet projet){
+	this.currentProjet=projet;
+}
 //-------------Methodes-------------
 	private void initMenuBar(){
 		//creation de la bar de menu
@@ -34,7 +43,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		
 		// Création d'onglet fichier
 		JMenu menu = new JMenu("Fichier");
-		this.add(menuBar);
+		
 		
 		//Ajout de l'option nouveau projet au menu fichier
 		JMenuItem menuItem = new JMenuItem("Nouveau Projet");
@@ -90,8 +99,10 @@ public class FenetreGestionDeProjet extends JFrame {
 		menu.add(menuItem);
 		
 		//Ajout du menu Lot à la bar de menu
-		
 		menuBar.add(menu);
+		
+		//Ajout de la bar à la fenêtre
+		this.add(menuBar);
 	}
 	
 }
