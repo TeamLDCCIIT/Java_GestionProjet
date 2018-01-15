@@ -13,13 +13,11 @@ public class ActionCreerProjet extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(action.equals(NOM_ACTION)){
-			FenetreCreationProjet fenetre = new FenetreCreationProjet();
-			fenetre.setVisible(true);
+		FenetreCreationProjet fenetre = new FenetreCreationProjet();
+		fenetre.setVisible(true);
 		}
 	}
 	
 
 
-}
+
