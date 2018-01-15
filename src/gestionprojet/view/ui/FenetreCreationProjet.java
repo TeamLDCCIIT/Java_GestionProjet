@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 
 public class FenetreCreationProjet extends JDialog {
 //-------------Constantes-------------
-	public static final String DEFAULT_TITLE = "Créer un Projet";
+	public static final String DEFAULT_TITLE = "Crï¿½er un Projet";
 	
-	FenetreCreationProjet(){
+	public FenetreCreationProjet(){
 		super();
 		this.setTitle(DEFAULT_TITLE);
 		this.setLocation(10,10);
@@ -16,14 +16,14 @@ public class FenetreCreationProjet extends JDialog {
 		this.pack();
 	}
 	
-	FenetreCreationProjet(JFrame frame){
+	public FenetreCreationProjet(JFrame frame){
 		super(frame,DEFAULT_TITLE,true);
 		this.setLocation(10,10);
 		this.pack();
 	}
 	
 	private void initComposant(){
-		JButton terminer = new JButton("ce bouton ne sert à rien");
+		JButton terminer = new JButton("ce bouton ne sert ï¿½ rien");
 		this.add(terminer);
 		
 	}
