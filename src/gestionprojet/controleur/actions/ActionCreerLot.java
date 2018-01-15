@@ -3,7 +3,7 @@ import gestionprojet.view.ui.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.FenetreCreationLot;
+import gestionprojet.view.ui.FenetreOptionLot;
 
 public class ActionCreerLot extends AbstractAction{
 	
@@ -19,7 +19,7 @@ public class ActionCreerLot extends AbstractAction{
 		// TODO Auto-generated method stub
 		String action = e.getActionCommand();
 		if(action.equals(NOM_ACTION)){
-			FenetreCreationLot fenetre = new FenetreCreationLot(); 
+			FenetreOptionLot fenetre = new FenetreOptionLot(); 
 			fenetre.setVisible(true);
 		}
 		

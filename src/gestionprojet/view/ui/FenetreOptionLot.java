@@ -1,23 +1,26 @@
 package gestionprojet.view.ui;
 
+import java.awt.Dialog.ModalityType;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
-public class FenetreCreationLot extends JDialog {
+public class FenetreOptionLot extends JDialog {
 
 	//-------------Constantes-------------
 		public static final String DEFAULT_TITLE = "Creer un Lot";
 		
-		public FenetreCreationLot(){
+		public FenetreOptionLot(){
 			super();
 			this.setTitle(DEFAULT_TITLE);
-			this.setLocation(10,10);
+			this.setLocation(500,500);
+			this.setModalityType(ModalityType.APPLICATION_MODAL);
 			this.initComposant();
 			this.pack();
 		}
 		
-		public FenetreCreationLot(JFrame frame){
+		public FenetreOptionLot(JFrame frame){
 			super(frame,DEFAULT_TITLE,true);
 			this.setLocation(10,10);
 			this.pack();
