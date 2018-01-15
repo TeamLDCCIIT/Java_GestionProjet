@@ -1,5 +1,5 @@
 package gestionprojet.controleur.actions;
-
+import gestionprojet.view.ui.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
@@ -18,6 +18,7 @@ public class ActionCreerLot extends AbstractAction{
 		String action = e.getActionCommand();
 		if(action.equals(NOM_ACTION)){
 			FenetreCreationLot fenetre = new FenetreCreationLot(); 
+			fenetre.setVisible(true);
 		}
 		
 	}
