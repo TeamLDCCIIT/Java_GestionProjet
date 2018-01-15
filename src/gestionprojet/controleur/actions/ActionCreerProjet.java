@@ -1,5 +1,5 @@
 package gestionprojet.controleur.actions;
-
+import gestionprojet.view.ui.*;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
@@ -13,12 +13,11 @@ public class ActionCreerProjet extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(action.equals(NOM_ACTION)){
-			FenetreCreationProjet fenetre = new FenetreCreationProjet();
+		FenetreCreationProjet fenetre = new FenetreCreationProjet();
+		fenetre.setVisible(true);
 		}
 	}
 	
 
 
-}
+
