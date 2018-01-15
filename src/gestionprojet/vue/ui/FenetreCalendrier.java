@@ -20,6 +20,9 @@ import javax.swing.table.DefaultTableModel;
  * Par Céline MERAND
  * Le 12/01/2018
  * Source : "http://www.javacodex.com/Swing/Swing-calendarendar"
+ * "http://jeannot45.developpez.com/articles/access/gestionplanning/"
+ * TODO :
+ * Automatiser en fonction des dates du projet
  */
 
 public class FenetreCalendrier extends JFrame {
@@ -59,15 +62,19 @@ public class FenetreCalendrier extends JFrame {
 			}
 		});
 
+		//Placement titre et boutons
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		panel.add(previous, BorderLayout.WEST);
+		//label = Mois et année correspond
 		panel.add(label, BorderLayout.CENTER);
 		panel.add(next, BorderLayout.EAST);
 
+		//Insertion titres colonnes
 		String[] columns = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 		model = new DefaultTableModel(null, columns);
 		JTable table = new JTable(model);
+		//Barre de défilements 
 		JScrollPane pane = new JScrollPane(table);
 
 		this.add(panel, BorderLayout.NORTH);
