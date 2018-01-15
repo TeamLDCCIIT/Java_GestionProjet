@@ -1,9 +1,13 @@
 package gestionprojet.view.ui;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
@@ -31,6 +35,10 @@ public class FenetreGestionDeProjet extends JFrame {
 		}
 		return instance;
 	}
+	public Projet getProjet(){
+		return this.currentProjet;
+	}
+	
 	
 //-------------Setter-------------
 public void setProjet(Projet projet){
@@ -104,7 +112,7 @@ public void setProjet(Projet projet){
 		menuBar.add(menu);
 		
 		//Ajout de la bar � la fen�tre
-		this.add(menuBar);
+		this.setJMenuBar(menuBar);
 	}
 	
 }
