@@ -5,6 +5,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.modele.Projet;
 
@@ -83,6 +84,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout de l'option nouveau Lot au menu Lot
 		menuItem = new JMenuItem("Nouveau lot");
+		menuItem.addActionListener(new ActionCreerLot());
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
