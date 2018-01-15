@@ -51,7 +51,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		//Ajout d'un separateur
 		menu.addSeparator();
 		
-		//Ajout des option Ouvrir et Enregistrer au menu Fichier
+		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
 		menu.add(menuItem);
 		
