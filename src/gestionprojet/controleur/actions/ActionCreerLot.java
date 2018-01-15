@@ -15,12 +15,8 @@ public class ActionCreerLot extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(action.equals(NOM_ACTION)){
-			FenetreCreationLot fenetre = new FenetreCreationLot(); 
-			fenetre.setVisible(true);
-		}
-		
+		FenetreCreationLot fenetre = new FenetreCreationLot(); 
+		fenetre.setVisible(true);
 	}
 
 }
