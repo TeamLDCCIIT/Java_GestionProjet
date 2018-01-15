@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class FenetreCreationProjet extends JDialog {
 //-------------Constantes-------------
-	public static final String DEFAULT_TITLE = "Cr�er un Projet";
+	public static final String DEFAULT_TITLE = "Creer un Projet";
 	
 	public FenetreCreationProjet(){
 		super();
@@ -23,7 +23,7 @@ public class FenetreCreationProjet extends JDialog {
 	}
 	
 	private void initComposant(){
-		JButton terminer = new JButton("ce bouton ne sert � rien");
+		JButton terminer = new JButton("ce bouton ne sert a rien");
 		this.add(terminer);
 		
 	}

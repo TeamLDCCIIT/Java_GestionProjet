@@ -3,6 +3,8 @@ package gestionprojet.controleur.actions;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
+import gestionprojet.view.ui.FenetreCreationLot;
+
 public class ActionCreerLot extends AbstractAction{
 	
 	private static final long serialVersionUID = 1L;
