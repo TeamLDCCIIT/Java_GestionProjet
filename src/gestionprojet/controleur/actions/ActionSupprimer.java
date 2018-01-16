@@ -14,7 +14,7 @@ public class ActionSupprimer extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
+		//A FAIRE QUAND VU CALENDRIER SERA FAIT
 		
 	}
 	

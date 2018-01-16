@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
+import gestionprojet.controleur.actions.ActionOuvrir;
 import gestionprojet.modele.Projet;
 
 public class FenetreGestionDeProjet extends JFrame {
@@ -72,6 +73,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
+		menuItem.addActionListener(new ActionOuvrir());
 		menu.add(menuItem);
 		
 		menuItem = new JMenuItem("Enregistrer");
@@ -101,7 +103,7 @@ public void setProjet(Projet projet){
 		menu.addSeparator();
 		
 		//Ajout des options gris�es de base modifier et supprimer au menu lot
-		menuItem = new JMenuItem("modifier");
+		menuItem = new JMenuItem("Modifier");
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 public class FenetreOptionProjet extends JDialog {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Creer un Projet";
-	
+	private static FenetreOptionProjet instance;
 	public FenetreOptionProjet(){
 		super();
 		this.setTitle(DEFAULT_TITLE);
@@ -22,7 +22,12 @@ public class FenetreOptionProjet extends JDialog {
 		this.setLocation(10,10);
 		this.pack();
 	}
-	
+	public static FenetreOptionProjet getInstance(){
+		if (instance==null){
+			instance=new FenetreOptionProjet();
+		}
+		return instance;
+	}
 	private void initComposant(){
 		JButton terminer = new JButton("ce bouton ne sert a rien");
 		this.add(terminer);
