@@ -29,10 +29,10 @@ public class ActionEnregistrer extends AbstractAction{
 		}
 	}
 	
-	@Override
+
 	public void enregistrerCalendrier(){
 		// TODO Auto-generated method stub
-		JFileChooser ch = new JFileChooser();
+		/*JFileChooser ch = new JFileChooser();
 		ch.setDialogTitle("Enregistrer");
 		if(ch.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){
 			File fichier = ch.getSelectedFile();
@@ -45,7 +45,7 @@ public class ActionEnregistrer extends AbstractAction{
 					// TODO Auto-generated catch block
 					ex.printStackTrace();
 				}
-			}
+			}*/
 		
 	}
 	
