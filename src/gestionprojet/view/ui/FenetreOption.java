@@ -100,14 +100,14 @@ public class FenetreOption extends JDialog {
 	}
 	private void initComposant() {
 		
-		this.getPanneauBasic().setBackground(new Color(200, 50, 10));
-		this.getPanneauModulaire().setBackground(new Color(10,10,10));
-		
 		this.getContentPane().add(this.getPanneauBasic());
 		
 		JPanel panneauPlus = new JPanel();
+		panneauPlus.setLayout(new BoxLayout(panneauPlus, BoxLayout.LINE_AXIS));
 		boutonPlus = new JButton("Plus");
-		panneauPlus.add(boutonPlus, BorderLayout.WEST);
+		panneauPlus.add(Box.createRigidArea(new Dimension(10, 0)));
+		panneauPlus.add(boutonPlus);
+		panneauPlus.add(Box.createHorizontalGlue());
 		this.getContentPane().add(panneauPlus);
 		
 		this.getContentPane().add(this.getPanneauModulaire());
@@ -119,7 +119,7 @@ public class FenetreOption extends JDialog {
 		this.setPanneauBoutousValidation(new JPanel());
 		this.getPanneauBoutousValidation().setLayout(new BoxLayout(this.getPanneauBoutousValidation(), BoxLayout.LINE_AXIS));
 		this.getPanneauBoutousValidation().setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-		this.getPanneauBoutousValidation().setBackground(new Color(150, 200, 10));
+
 		
 		this.setBoutonValider(new JButton("Valider"));
 		this.setBoutonAnnule(new JButton("Annuler"));
