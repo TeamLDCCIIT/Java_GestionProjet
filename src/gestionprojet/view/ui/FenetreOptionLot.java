@@ -10,7 +10,7 @@ public class FenetreOptionLot extends JDialog {
 
 	//-------------Constantes-------------
 		public static final String DEFAULT_TITLE = "Creer un Lot";
-		
+		private static FenetreOptionLot instance;
 		public FenetreOptionLot(){
 			super();
 			this.setTitle(DEFAULT_TITLE);
@@ -25,7 +25,12 @@ public class FenetreOptionLot extends JDialog {
 			this.setLocation(10,10);
 			this.pack();
 		}
-		
+		public static FenetreOptionLot getInstance(){
+			if (instance==null){
+				instance=new FenetreOptionLot();
+			}
+			return instance;
+		}
 		private void initComposant(){
 			JButton terminer = new JButton("ce bouton ne sert a rien");
 			this.add(terminer);
