@@ -19,7 +19,8 @@ public class FenetreGestionDeProjet extends JFrame {
 //-------------Attributs-------------
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
-	private Projet currentProjet;
+	private Projet currentProject;
+	
 //-------------Constructeur-------------
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
@@ -35,14 +36,14 @@ public class FenetreGestionDeProjet extends JFrame {
 		}
 		return instance;
 	}
-	public Projet getProjet(){
-		return this.currentProjet;
+	public Projet getProject(){
+		return this.currentProject;
 	}
 	
 	
 //-------------Setter-------------
 public void setProjet(Projet projet){
-	this.currentProjet=projet;
+	this.currentProject=projet;
 }
 //-------------Methodes-------------
 	private void initMenuBar(){

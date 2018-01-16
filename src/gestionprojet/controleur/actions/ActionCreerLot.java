@@ -3,7 +3,7 @@ import gestionprojet.view.ui.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.FenetreCreationLot;
+import gestionprojet.view.ui.FenetreOptionLot;
 
 public class ActionCreerLot extends AbstractAction{
 	

@@ -4,19 +4,20 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
-public class FenetreCreationProjet extends JDialog {
+public class FenetreOptionProjet extends JDialog {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Creer un Projet";
 	
-	public FenetreCreationProjet(){
+	public FenetreOptionProjet(){
 		super();
 		this.setTitle(DEFAULT_TITLE);
 		this.setLocation(10,10);
+		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.initComposant();
 		this.pack();
 	}
 	
-	public FenetreCreationProjet(JFrame frame){
+	public FenetreOptionProjet(JFrame frame){
 		super(frame,DEFAULT_TITLE,true);
 		this.setLocation(10,10);
 		this.pack();
