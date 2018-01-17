@@ -62,7 +62,7 @@ public class FenetreCalendrier2 extends JFrame {
 	//Méthodes
 	public static void main(String[] arguments) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		FenetreCalendrier2 sc = new FenetreCalendrier2(new Calendrier("2018-01-01","2018-01-10"));
+		FenetreCalendrier2 sc = new FenetreCalendrier2(new Calendrier("2018-01-01","2018-02-21"));
 	}
 	
 	public void addLot(Lot lot){

@@ -6,7 +6,7 @@ public class Test {
 	}
 
 	public static void main(String[] args) {
-			Calendrier c1 = new Calendrier("2017-01-01", "2017-01-10");
+			Calendrier c1 = new Calendrier("2017-01-01", "2017-10-21");
 			
 			System.out.println(c1.getStartDate());
 			System.out.println(c1.getEndDate());

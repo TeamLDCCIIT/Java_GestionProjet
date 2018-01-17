@@ -35,7 +35,7 @@ public class Calendrier {
 	}
 	
 	public Calendrier(String startDate, String endDate) {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			
 			try{
 				Date dd = sdf.parse(startDate);
@@ -68,9 +68,13 @@ public class Calendrier {
 	}
 	
 	public int getDurationInDays() {
-		long diff = this.getEndDate().getTime() - this.getStartDate().getTime();
-		diff = diff/(1000 * 60 * 60 * 24) +1;
-		return (int)diff;
+		Calendar startCalendar = new GregorianCalendar();
+		startCalendar.setTime(this.getStartDate());
+		Calendar endCalendar = new GregorianCalendar();
+		endCalendar.setTime(this.getEndDate());
+		int diff = Math.round(Math.abs((startCalendar.getTimeInMillis()- endCalendar.getTimeInMillis())/(1000 * 60 * 60 * 24)));
+		//long diff = new GregorianCalendar().setTime(this.getEndDate()) - this.getStartDate().getTime()		
+		return diff;
 	}
 	//-----------Mutateurs------------
 	public void setStartDate(Date startDate){
@@ -96,12 +100,16 @@ public class Calendrier {
 		endCalendar.setTime(this.getEndDate());
 		
 		while(calendar.before(endCalendar)){
-			
 			String result = calendar.getTime().toString();
+			String[] parts = result.split(" ");
+			result = parts[1] +" " + parts[2] + " " + parts[5];
 			datesInRange.add(result);
 			calendar.add(Calendar.DATE, 1);
 		}
-		datesInRange.add(this.getEndDate().toString());
+		String endResult = endCalendar.getTime().toString();
+		String[] parts = endResult.split(" ");
+		endResult = parts[1] +" " + parts[2] + " " + parts[5];
+		datesInRange.add(endResult);
 		
 		return datesInRange;
 		
