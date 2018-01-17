@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -16,13 +17,17 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import gestionprojet.modele.Calendrier;
+
 /*
  * Par Céline MERAND
  * Le 12/01/2018
- * Source : "http://www.javacodex.com/Swing/Swing-calendarendar"
+ * Source : "http://www.javacodex.com/Swing/Swing-calendar"
  * "http://jeannot45.developpez.com/articles/access/gestionplanning/"
  * TODO :
  * Automatiser en fonction des dates du projet
+ * Simplification du projet : 
+ * Calendrier basique  et ajout des lots sur la durée
  */
 
 public class FenetreCalendrier extends JFrame {
@@ -63,6 +68,7 @@ public class FenetreCalendrier extends JFrame {
 		});
 
 		//Placement titre et boutons
+		//TODO à suppprimer ?
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		panel.add(previous, BorderLayout.WEST);
@@ -71,7 +77,7 @@ public class FenetreCalendrier extends JFrame {
 		panel.add(next, BorderLayout.EAST);
 
 		//Insertion titres colonnes
-		String[] columns = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+		String[] columns = { "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" };
 		model = new DefaultTableModel(null, columns);
 		JTable table = new JTable(model);
 		//Barre de défilements 
@@ -87,7 +93,7 @@ public class FenetreCalendrier extends JFrame {
 	public void updateMonth() {
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 
-		String month = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US);
+		String month = calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.FRANCE);
 		int year = calendar.get(Calendar.YEAR);
 		label.setText(month + " " + year);
 
@@ -104,6 +110,15 @@ public class FenetreCalendrier extends JFrame {
 			i = i + 1;
 		}
 
+	}
+	
+	//Adapter le tableau quand nouveau lot
+	public void addLot(){
+		//model.insertRow(row, rowData);
+	}
+	
+	public void removeLot(){
+		
 	}
 
 	public static void main(String[] arguments) {
