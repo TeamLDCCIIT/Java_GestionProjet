@@ -1,7 +1,7 @@
 package gestionprojet.controleur.actions;
-import gestionprojet.view.ui.*;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
 
 public class ActionCreerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
