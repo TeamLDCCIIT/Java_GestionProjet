@@ -1,5 +1,12 @@
 package gestionprojet.controleur.actions;
+import gestionprojet.view.ui.*;
 import javax.swing.AbstractAction;
+import javax.swing.JFileChooser;
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
 import java.awt.event.ActionEvent;
 
 public class ActionOuvrir extends AbstractAction{
@@ -12,17 +19,11 @@ public class ActionOuvrir extends AbstractAction{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(action.equals(NOM_ACTION)){
-			this.ouvrirCalendrier();
+		JFileChooser ch = new JFileChooser();
+		ch.setDialogTitle("Ouvrir");
+		if(ch.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
+			File fichier = ch.getSelectedFile();
 		}
-		
 	}
 	
-	public void ouvrirCalendrier(){
-		
-		
-	}
-
 }
