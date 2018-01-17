@@ -2,23 +2,21 @@ package gestionprojet.controleur.actions;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.Fenetre.FenetreOptionProjet;
+import gestionprojet.view.ui.FenetreOption;
 
 public class ActionAnnulerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
-	public static final String NOM_ACTION = "Annuler Projet";
+	public static final String NOM_ACTION = "Annuler";
+	FenetreOption fenetre;
 	
-	public ActionAnnulerProjet(){
+	public ActionAnnulerProjet(FenetreOption fenetre){
 		super(NOM_ACTION);
+		this.fenetre = fenetre;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		FenetreOptionProjet fenetre = FenetreOptionProjet.getInstance();
-		//permet d'effacer
-		//fenetre.getPanneauDessin().getVueFormes().clear();
-		fenetre.repaint();
+		fenetre.dispose();
 	}
 
 }

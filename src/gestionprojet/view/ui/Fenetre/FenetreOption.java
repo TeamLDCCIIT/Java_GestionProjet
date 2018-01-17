@@ -16,6 +16,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import gestionprojet.controleur.actions.ActionAnnulerProjet;
 import gestionprojet.controleur.actions.ActionDerouler;
 
 public abstract class FenetreOption extends JDialog {
@@ -126,7 +127,7 @@ public abstract class FenetreOption extends JDialog {
 
 		
 		this.setBoutonValider(new JButton("Valider"));
-		this.setBoutonAnnule(new JButton("Annuler"));
+		this.setBoutonAnnule(new JButton(new ActionAnnulerProjet(this)));
 	
 		this.getPanneauBoutousValidation().add(this.getBoutonValider());
 		this.getPanneauBoutousValidation().add(Box.createRigidArea(new Dimension(10, 0)));

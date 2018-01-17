@@ -1,8 +1,9 @@
 package gestionprojet.controleur.actions;
-import gestionprojet.view.ui.Fenetre.FenetreOptionProjet;
+import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
+
+import gestionprojet.view.ui.FenetreOption;
 
 public class ActionCreerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
@@ -14,8 +15,8 @@ public class ActionCreerProjet extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		FenetreOptionProjet fenetre = new FenetreOptionProjet();
-		//fenetre.getBoutonValider().setAction(/* a remplir */);
+		FenetreOption fenetre = new FenetreOption();
+		fenetre.getBoutonValider().setAction(new ActionCreationP());
 		fenetre.setVisible(true);
 		}
 	}
