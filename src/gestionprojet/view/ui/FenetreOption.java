@@ -109,12 +109,8 @@ public class FenetreOption extends JDialog {
 		panneauPlus.add(boutonPlus);
 		panneauPlus.add(Box.createHorizontalGlue());
 		this.getContentPane().add(panneauPlus);
-		
+		this.getPanneauModulaire().setBackground(new Color(150,200,250));
 		this.getContentPane().add(this.getPanneauModulaire());
-		
-		
-
-		
 		
 		this.setPanneauBoutousValidation(new JPanel());
 		this.getPanneauBoutousValidation().setLayout(new BoxLayout(this.getPanneauBoutousValidation(), BoxLayout.LINE_AXIS));
@@ -138,7 +134,8 @@ public class FenetreOption extends JDialog {
 		
 	}
 	
-	public void AfficherMasquer(){
-		//A faire
+	public void afficher(){
+		this.getPanneauModulaire().setVisible(!developpe);
+		this.setDeveloppe(!developpe);
 	}
 }
