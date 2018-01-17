@@ -3,7 +3,7 @@ package gestionprojet.controleur.actions;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.FenetreOptionLot;
+import gestionprojet.view.ui.Fenetre.FenetreOptionLot;
 
 public class ActionAnnulerLot extends AbstractAction{
 	private static final long serialVersionUID = 1L;
