@@ -14,6 +14,7 @@ public class ActionCreerProjet extends AbstractAction{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		FenetreOption fenetre = new FenetreOption();
+		fenetre.getBoutonValider().setAction(/* a remplir */);
 		fenetre.setVisible(true);
 		}
 	}
