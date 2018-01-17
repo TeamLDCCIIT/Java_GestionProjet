@@ -1,6 +1,9 @@
+import javax.swing.JFrame;
+
 import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Lot;
 import gestionprojet.modele.Projet;
+import gestionprojet.vue.ui.FenetreCalendrier2;
 
 public class Test {
 
@@ -32,7 +35,10 @@ public class Test {
 			for(int i = 0; i < p.getLotList().size();i++){
 				System.out.println(p.getLotList().get(i).getName());
 			}
-			
+			/*JFrame.setDefaultLookAndFeelDecorated(true);
+			FenetreCalendrier2 f = new FenetreCalendrier2(p);
+			f.setVisible(true);
+			*/
 	}
 
 }
