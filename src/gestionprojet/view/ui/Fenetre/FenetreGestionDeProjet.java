@@ -1,15 +1,9 @@
 package gestionprojet.view.ui.Fenetre;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-
 import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;

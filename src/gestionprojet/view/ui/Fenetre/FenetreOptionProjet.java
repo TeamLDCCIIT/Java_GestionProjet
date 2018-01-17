@@ -7,11 +7,18 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import gestionprojet.view.ui.Panneau.PanneauBasProjet;
 import gestionprojet.view.ui.Panneau.PanneauHautProjet;
 
 public class FenetreOptionProjet extends FenetreOption {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Creer un Projet";
+	
+	public FenetreOptionProjet(){
+		super();
+		this.setTitle(FenetreOptionProjet.DEFAULT_TITLE);
+	}
+	
 //-------------Attribut-------------
 	private static FenetreOptionProjet instance;
 	
@@ -32,7 +39,9 @@ public class FenetreOptionProjet extends FenetreOption {
 
 	@Override
 	void initPanneauBas() {
-		// TODO Auto-generated method stub
+		this.setPanneauBas(new PanneauBasProjet());
+		this.getPanneauBas().setVisible(false);
+		this.getContentPane().add(this.getPanneauBas());
 		
 	}
 

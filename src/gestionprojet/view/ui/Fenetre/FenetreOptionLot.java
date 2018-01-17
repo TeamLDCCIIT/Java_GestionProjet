@@ -5,6 +5,11 @@ public class FenetreOptionLot extends FenetreOption {
 	//-------------Constantes-------------
 		public static final String DEFAULT_TITLE = "Creer un Lot";
 		
+		public FenetreOptionLot(){
+			super();
+			this.setTitle(FenetreOptionLot.DEFAULT_TITLE);
+		}
+		
 	//-------------Attribut-------------
 		private static FenetreOptionLot instance;
 		
