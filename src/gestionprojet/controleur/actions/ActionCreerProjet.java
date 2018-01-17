@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.FenetreOption;
+import gestionprojet.view.ui.Fenetre.FenetreOptionProjet;
 
 public class ActionCreerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
@@ -15,8 +15,9 @@ public class ActionCreerProjet extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		FenetreOption fenetre = new FenetreOption();
+		FenetreOptionProjet fenetre = new FenetreOptionProjet();
 		fenetre.getBoutonValider().setAction(new ActionCreationP());
+		fenetre.getBoutonAnnule().setAction(new ActionAnnulerProjet(fenetre));
 		fenetre.setVisible(true);
 		}
 	}

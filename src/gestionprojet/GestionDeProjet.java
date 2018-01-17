@@ -1,6 +1,6 @@
 package gestionprojet;
 
-import gestionprojet.view.ui.FenetreGestionDeProjet;
+import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
 
 public class GestionDeProjet {
 

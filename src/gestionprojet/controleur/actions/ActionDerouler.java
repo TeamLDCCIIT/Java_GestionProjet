@@ -1,6 +1,8 @@
 package gestionprojet.controleur.actions;
-import gestionprojet.view.ui.FenetreOption;
 import javax.swing.AbstractAction;
+
+import gestionprojet.view.ui.Fenetre.FenetreOption;
+
 import java.awt.event.ActionEvent;
 
 public class ActionDerouler extends AbstractAction{
