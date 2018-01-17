@@ -24,7 +24,7 @@ public abstract class FenetreOption extends JDialog {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Option";
 	public static final ModalityType TYPE_MODAL = ModalityType.APPLICATION_MODAL;
-	
+
 	private JPanel panneauHaut;
 	private JPanel panneauBas;
 	private JPanel panneauBoutousValidation;
