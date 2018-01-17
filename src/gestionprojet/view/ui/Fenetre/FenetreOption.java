@@ -127,7 +127,7 @@ public abstract class FenetreOption extends JDialog {
 
 		
 		this.setBoutonValider(new JButton("Valider"));
-		this.setBoutonAnnule(new JButton(new ActionAnnulerProjet(this)));
+		this.setBoutonAnnule(new JButton("Annuler"));
 	
 		this.getPanneauBoutousValidation().add(this.getBoutonValider());
 		this.getPanneauBoutousValidation().add(Box.createRigidArea(new Dimension(10, 0)));
