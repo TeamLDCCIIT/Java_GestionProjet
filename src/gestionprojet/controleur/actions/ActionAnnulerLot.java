@@ -7,7 +7,7 @@ import gestionprojet.view.ui.Fenetre.FenetreOptionLot;
 
 public class ActionAnnulerLot extends AbstractAction{
 	private static final long serialVersionUID = 1L;
-	public static final String NOM_ACTION = "Annuler Lot";
+	public static final String NOM_ACTION = "Annuler";
 	FenetreOptionLot fenetre;
 	
 	public ActionAnnulerLot(FenetreOptionLot fenetre){

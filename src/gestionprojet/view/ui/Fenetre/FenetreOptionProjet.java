@@ -1,10 +1,13 @@
 package gestionprojet.view.ui.Fenetre;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-import gestionprojet.view.ui.Panneau.PanneauBasicProjet;
+import gestionprojet.view.ui.Panneau.PanneauHautProjet;
 
 public class FenetreOptionProjet extends FenetreOption {
 //-------------Constantes-------------
@@ -21,7 +24,9 @@ public class FenetreOptionProjet extends FenetreOption {
 	
 	@Override
 	void initPanneauHaut() {
-		// TODO Auto-generated method stub
+		this.setPanneauHaut(new PanneauHautProjet());
+		this.getPanneauHaut().setVisible(true);
+		this.getContentPane().add(this.getPanneauHaut());
 		
 	}
 

@@ -15,7 +15,7 @@ public class ActionCreerProjet extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		FenetreOptionProjet fenetre = new FenetreOptionProjet();
+		FenetreOptionProjet fenetre = FenetreOptionProjet.getInstance();
 		fenetre.getBoutonValider().setAction(new ActionCreationP());
 		fenetre.getBoutonAnnule().setAction(new ActionAnnulerProjet(fenetre));
 		fenetre.setVisible(true);
