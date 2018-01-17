@@ -6,6 +6,20 @@ import java.awt.event.MouseEvent;
 
 public abstract class Outil implements MouseListener, MouseMotionListener{
 
+	public void associer(){
+		
+	}
+	public void liberer(){
+		
+	}
+	public void mousePressed(MouseEvent event){
+		
+	}
+	
+	public void mouseRelease(MouseEvent event){
+		
+	}
+	
 	public void mouseClicked(MouseEvent event){
 		
 	}
