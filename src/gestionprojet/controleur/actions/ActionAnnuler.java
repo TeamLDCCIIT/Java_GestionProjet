@@ -1,16 +1,16 @@
 package gestionprojet.controleur.actions;
-
 import java.awt.event.ActionEvent;
+
 import javax.swing.AbstractAction;
 
-import gestionprojet.view.ui.FenetreOptionLot;
+import gestionprojet.view.ui.FenetreGestionDeProjet;
 
-public class ActionAnnulerLot extends AbstractAction{
+public class ActionAnnuler extends AbstractAction{
 	private static final long serialVersionUID = 1L;
-	public static final String NOM_ACTION = "Annuler Lot";
-	FenetreOptionLot fenetre;
+	public static final String NOM_ACTION = "Quitter";
+	FenetreGestionDeProjet fenetre;
 	
-	public ActionAnnulerLot(FenetreOptionLot fenetre){
+	public ActionAnnuler(FenetreGestionDeProjet fenetre){
 		super(NOM_ACTION);
 		this.fenetre = fenetre;
 	}
@@ -18,8 +18,6 @@ public class ActionAnnulerLot extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		fenetre.dispose();
+		fenetre.dispose();		
 	}
-	
-	
 }
