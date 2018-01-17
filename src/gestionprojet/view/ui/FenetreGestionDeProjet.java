@@ -1,7 +1,8 @@
 package gestionprojet.view.ui;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -10,6 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import gestionprojet.controleur.actions.ActionAnnuler;
+import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
@@ -29,6 +31,9 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.initMenuBar();
+		
+		this.addMouseListener(new ActionClickDroit(this));
+		
 		this.pack();
 	}
 //-------------Getter-------------	
@@ -117,6 +122,9 @@ public void setProjet(Projet projet){
 		
 		//Ajout de la bar � la fen�tre
 		this.setJMenuBar(menuBar);
+		
 	}
+	
+	
 	
 }
