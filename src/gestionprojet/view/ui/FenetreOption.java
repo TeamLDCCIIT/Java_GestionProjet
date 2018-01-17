@@ -16,6 +16,8 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import gestionprojet.controleur.actions.ActionDerouler;
+
 public class FenetreOption extends JDialog {
 
 //-------------Constantes-------------
@@ -104,7 +106,8 @@ public class FenetreOption extends JDialog {
 		
 		JPanel panneauPlus = new JPanel();
 		panneauPlus.setLayout(new BoxLayout(panneauPlus, BoxLayout.LINE_AXIS));
-		boutonPlus = new JButton("Plus");
+		boutonPlus = new JButton(new ActionDerouler(this));
+		boutonPlus.setText("plus");
 		panneauPlus.add(Box.createRigidArea(new Dimension(10, 0)));
 		panneauPlus.add(boutonPlus);
 		panneauPlus.add(Box.createHorizontalGlue());
@@ -128,14 +131,15 @@ public class FenetreOption extends JDialog {
 		
 		
 		this.getPanneauBasic().setVisible(true);
-		this.getPanneauModulaire().setVisible(true);
+		this.getPanneauModulaire().setVisible(false);
 		panneauPlus.setVisible(true);
 		this.getPanneauBoutousValidation().setVisible(true);
 		
 	}
 	
-	public void afficher(){
+	public void afficherMasquer(){
 		this.getPanneauModulaire().setVisible(!developpe);
 		this.setDeveloppe(!developpe);
+		this.pack();
 	}
 }

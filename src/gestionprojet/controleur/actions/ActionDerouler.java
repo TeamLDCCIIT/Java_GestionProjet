@@ -14,11 +14,7 @@ public class ActionDerouler extends AbstractAction{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(e.equals(NOM_ACTION)){
-			fenetre.AfficherMasquer();
-		}
+			fenetre.afficherMasquer();
 		
 	}
 	
