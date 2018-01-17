@@ -9,6 +9,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
@@ -84,7 +85,7 @@ public void setProjet(Projet projet){
 		menu.addSeparator();
 		
 		//Ajout de l'option quitter au menu fichier
-		menuItem = new JMenuItem("Quitter");
+		menuItem = new JMenuItem(new ActionAnnuler(this));
 		menu.add(menuItem);
 		
 		//Ajout du menu fichier � la bar de menu
