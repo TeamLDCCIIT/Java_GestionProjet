@@ -1,9 +1,8 @@
 package gestionprojet.controleur.actions;
-import gestionprojet.view.ui.*;
+import gestionprojet.view.ui.Fenetre.FenetreOptionLot;
+
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
-
-import gestionprojet.view.ui.FenetreOptionLot;
 
 public class ActionCreerLot extends AbstractAction{
 	
@@ -19,6 +18,7 @@ public class ActionCreerLot extends AbstractAction{
 		// TODO Auto-generated method stub
 		FenetreOptionLot fenetre = new FenetreOptionLot(); 
 		fenetre.getBoutonValider().setAction(new ActionCreationL());
+		fenetre.getBoutonAnnule().setAction(new ActionAnnulerLot(fenetre));
 		fenetre.setVisible(true);
 	}
 

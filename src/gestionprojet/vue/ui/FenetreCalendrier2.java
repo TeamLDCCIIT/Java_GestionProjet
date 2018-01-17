@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Lot;
+import gestionprojet.modele.Projet;
 
 public class FenetreCalendrier2 extends JFrame {
 
@@ -23,7 +24,7 @@ public class FenetreCalendrier2 extends JFrame {
 	JLabel label;
 		
 	//Constructeur
-	public FenetreCalendrier2(Calendrier calendrier) {
+	public FenetreCalendrier2(Projet projet) {
 		//Affichage de la fenêtre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Calendrier Gestion de Projet");
@@ -41,16 +42,17 @@ public class FenetreCalendrier2 extends JFrame {
 		//Taille du tableau (lignes, colonnes)
 		//TODO Modifier le nombre de colonnes en fonction de la durée du projet
 		
-		model = new DefaultTableModel();
+		model = new DefaultTableModel(projet.getLotList().size(),0);
 		model.addColumn(" ");
 		//Ajout des dates dans le tableau
-		//TODO ajouter taille mini pour une case
-		for(String item :calendrier.getDatesBetween()){
+		for(String item :projet.getCalendar().getDatesBetween()){
 			model.addColumn(item);
 		}
 					
 		//Création du tableau
 		JTable table = new JTable(model);
+		//Disable réduction des colonnes
+		 table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		//Barre de défilements 
 		JScrollPane pane = new JScrollPane(table);
 		
@@ -62,11 +64,6 @@ public class FenetreCalendrier2 extends JFrame {
 	//Méthodes
 	public static void main(String[] arguments) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		FenetreCalendrier2 sc = new FenetreCalendrier2(new Calendrier("2018-01-01","2018-01-10"));
-	}
-	
-	public void addLot(Lot lot){
-		//model.addRow(calendrier.get);
-		
+		FenetreCalendrier2 sc = new FenetreCalendrier2(new Projet("Exemple", new Calendrier("2018-01-01","2018-02-21")));
 	}
 }

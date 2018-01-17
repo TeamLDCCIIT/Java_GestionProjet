@@ -1,4 +1,4 @@
-package gestionprojet.view.ui;
+package gestionprojet.view.ui.Fenetre;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -128,3 +128,4 @@ public void setProjet(Projet projet){
 	
 	
 }
+

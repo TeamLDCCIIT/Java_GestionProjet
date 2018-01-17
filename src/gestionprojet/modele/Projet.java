@@ -1,6 +1,5 @@
 package gestionprojet.modele;
 import java.util.ArrayList;
-import java.util.Date;
 
 /*
  * Par Céline MERAND
@@ -61,5 +60,23 @@ public class Projet {
 	}
 	
 	//Méthodes
+	public void updateLotList(ArrayList<Lot> liste){
+		for(int i = 0; i< liste.size()-1; i++){
+			for (int j = 0;j<liste.size()-1; j++){
+				if(liste.get(j).getStartDate().after(liste.get(j+1).getStartDate())) {
+					Lot temp = liste.get(j);
+					liste.set(j, liste.get(j+1));
+					liste.set(j+1, temp);
+				}
+				if (liste.get(j).getStartDate().equals(liste.get(j+1).getStartDate()) 
+						&& liste.get(j).getEndDate().after(liste.get(j+1).getEndDate())){
+					Lot temp = liste.get(j);
+					liste.set(j, liste.get(j+1));
+					liste.set(j+1, temp);
+				}
+			}
+			
+		}
+	}
 
 }
