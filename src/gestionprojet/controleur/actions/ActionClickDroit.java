@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import gestionprojet.view.ui.FenetreGestionDeProjet;
+import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
 
 public class ActionClickDroit implements MouseListener {
 	public FenetreGestionDeProjet fenetre;
