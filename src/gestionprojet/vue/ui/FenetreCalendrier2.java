@@ -13,7 +13,6 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import gestionprojet.modele.Calendrier;
-import gestionprojet.modele.Lot;
 import gestionprojet.modele.Projet;
 
 public class FenetreCalendrier2 extends JFrame {
@@ -42,7 +41,7 @@ public class FenetreCalendrier2 extends JFrame {
 		//Taille du tableau (lignes, colonnes)
 		//TODO Modifier le nombre de colonnes en fonction de la durée du projet
 		
-		model = new DefaultTableModel(projet.getLotList().size(),0);
+		model = new DefaultTableModel(projet.getLotList().size()-1,0);
 		model.addColumn(" ");
 		//Ajout des dates dans le tableau
 		for(String item :projet.getCalendar().getDatesBetween()){
@@ -59,11 +58,12 @@ public class FenetreCalendrier2 extends JFrame {
 		this.add(panel, BorderLayout.NORTH);
 		this.add(pane, BorderLayout.CENTER);
 	}
-
 	
-	//Méthodes
-	public static void main(String[] arguments) {
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		FenetreCalendrier2 sc = new FenetreCalendrier2(new Projet("Exemple", new Calendrier("2018-01-01","2018-02-21")));
-	}
+	 //Méthodes
+	  public static void main(String[] arguments) {
+	    JFrame.setDefaultLookAndFeelDecorated(true);
+	    FenetreCalendrier2 sc = new FenetreCalendrier2(new Projet("Exemple",new Calendrier("2018-01-01","2018-02-21")));
+	 
+	  }
 }
+	 

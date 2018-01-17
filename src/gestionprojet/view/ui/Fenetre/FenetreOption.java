@@ -104,6 +104,7 @@ public abstract class FenetreOption extends JDialog {
 		this.setTitle(DEFAULT_TITLE);
 		this.setLocationRelativeTo(null);
 		this.setModalityType(TYPE_MODAL);
+		this.setResizable(false);
 		this.getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.PAGE_AXIS));
 		this.getContentPane().setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 	}
@@ -136,7 +137,6 @@ public abstract class FenetreOption extends JDialog {
 		this.getContentPane().add(this.getPanneauBoutousValidation());
 		
 		this.getPanneauBoutousValidation().setVisible(true);
-		
 	}
 	
 	abstract void initPanneauHaut();
