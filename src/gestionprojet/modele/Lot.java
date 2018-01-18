@@ -150,13 +150,6 @@ public class Lot {
 		this.tasks = tasks;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	
 	public void setDescription(String description){
 		this.description = description;

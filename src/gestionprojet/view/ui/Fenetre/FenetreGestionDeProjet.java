@@ -1,17 +1,17 @@
 package gestionprojet.view.ui.Fenetre;
 
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+
 import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
 import gestionprojet.modele.Projet;
+import gestionprojet.view.ui.Panneau.PanneauCalendrier;
 
 public class FenetreGestionDeProjet extends JFrame {
 //-------------Constantes-------------
@@ -30,8 +30,8 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		this.initMenuBar();
-		
+		this.initMenuBar();		
+		//this.afficherCalendrier();
 		this.addMouseListener(new ActionClickDroit(this));
 		
 		this.pack();
@@ -92,7 +92,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		//Ajout d'un separateur
 		menu.addSeparator();
 		
-		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
+		//Ajout des options Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
 		menuItem.addActionListener(new ActionOuvrir());
 		menu.add(menuItem);
@@ -133,14 +133,19 @@ public class FenetreGestionDeProjet extends JFrame {
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
-		//Ajout du menu Lot � la bar de menu
+		//Ajout du menu Lot � la barre de menu
 		menuBar.add(menu);
 		
-		//Ajout de la bar � la fen�tre
+		//Ajout de la barre � la fen�tre
 		this.setJMenuBar(menuBar);
 		
 	}
 	
+	public void afficherCalendrier(){
+		if (this.getProject() != null){
+			new PanneauCalendrier(this.getProject());
+		}
+	}
 	
 	
 }

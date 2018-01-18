@@ -15,15 +15,11 @@ public class Projet {
 	private ArrayList<Personne> personList = new ArrayList<Personne>();
 	
 	//Constructeur
-<<<<<<< HEAD
-=======
-	//TODO ajouter les listes ?
 	/**
 	 * Constructeur
 	 * @param name String
 	 * @param calendar Calendrier
 	 */
->>>>>>> Test
 	public Projet(String name, Calendrier calendar) {
 		this.name = name;
 		this.calendar = calendar;		

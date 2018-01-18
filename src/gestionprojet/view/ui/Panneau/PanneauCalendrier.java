@@ -15,7 +15,6 @@ import javax.swing.table.DefaultTableModel;
 
 import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Projet;
-import gestionprojet.vue.ui.FenetreCalendrier2;
 
 public class PanneauCalendrier extends JPanel {
 
@@ -84,9 +83,10 @@ public class PanneauCalendrier extends JPanel {
 		}
 		
 		 //Méthodes	
-		  public static void main(String[] arguments) {
+		  /*public static void main(String[] arguments) {
 		    JFrame.setDefaultLookAndFeelDecorated(true);
 		    FenetreCalendrier2 sc = new FenetreCalendrier2(new Projet("Exemple",new Calendrier("2018-01-01","2018-02-21")));
 		  }
+		  */
 
 }

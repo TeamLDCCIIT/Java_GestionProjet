@@ -20,15 +20,12 @@ public class Calendrier {
 	
 
 	//Constructeur
-<<<<<<< HEAD
-=======
-	//TODO vérifier si startDate < endDate
 	/**
 	 * Constructeur
 	 * @param startDate Date
 	 * @param endDate Date
 	 */
->>>>>>> Test
+
 	public Calendrier(Date startDate, Date endDate) {
 		if (endDate.after(startDate)) {
 			this.startDate = startDate;
@@ -63,21 +60,10 @@ public class Calendrier {
 	}
 
 	//-----------Accesseurs------------
-<<<<<<< HEAD
-=======
-	//TODO à supprimer ?
-	/**
-	 * Getter
-	 * @return lot Collection<Lot>
-	 */
-	public Collection<Lot> getLot(){
-		return this.lot;
-	}
 	/**
 	 * Getter
 	 * @return startDate Date
 	 */
->>>>>>> Test
 	public Date getStartDate(){
 		return this.startDate;
 	}

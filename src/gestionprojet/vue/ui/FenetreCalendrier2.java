@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Projet;
 
-public class FenetreCalendrier2 extends JFrame {
+/*public class FenetreCalendrier2 extends JFrame {
 
 	// Attributs
 	DefaultTableModel model;
@@ -87,5 +87,5 @@ public class FenetreCalendrier2 extends JFrame {
 	    JFrame.setDefaultLookAndFeelDecorated(true);
 	    FenetreCalendrier2 sc = new FenetreCalendrier2(new Projet("Exemple",new Calendrier("2018-01-01","2018-02-21")));
 	  }
-}
+}*/
 	 
