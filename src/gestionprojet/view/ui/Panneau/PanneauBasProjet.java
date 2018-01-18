@@ -48,14 +48,26 @@ public class PanneauBasProjet extends JPanel {
 		return fonction;
 	}
 
-	private void afficheListe() {
+	public void afficheListe() {
 		// TODO Auto-generated method stub
 		JPanel panneauList = new JPanel();
 		panneauList.setBackground(new Color(255,0,0));
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.add(panneauList);
+		
 	}
 
+	
+	public String toString(ArrayList<Personne> personne){
+		System.out.println("Liste des personnes travaillant sur le projet : ");
+		String string = "";
+		for(int i =0; i<personne.size(); i++){
+			string += personne.get(i).getLastName()+" "+personne.get(i).getFirstName()+
+					" - Fonction : "+personne.get(i).getFunction()+"\n";
+			
+		}
+	return string;
+	}
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
 		panneauChamp.setBackground(new Color(150,200,10));
@@ -87,5 +99,6 @@ public class PanneauBasProjet extends JPanel {
 		
 		
 	}
+	
 	
 }
