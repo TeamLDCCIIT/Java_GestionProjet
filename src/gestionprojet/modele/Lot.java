@@ -24,6 +24,20 @@ public class Lot {
 	private ArrayList<Tache> tasks = new ArrayList<Tache>();
 		
 	//Constructeur
+	
+	
+	/**
+	 * Constructeur
+	 * @param name String
+	 * @param startDate Date
+	 * @param endDate Date
+	 * @param description String
+	 */
+	public Lot(String name, Date startDate, Date endDate,String description) {
+		this(name,startDate,endDate);
+		this.setDescription(description);
+	}
+
 	/**
 	 * Constructeur
 	 * @param name String

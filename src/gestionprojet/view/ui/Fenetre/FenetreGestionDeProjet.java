@@ -143,7 +143,7 @@ public class FenetreGestionDeProjet extends JFrame {
 	
 	public void afficherCalendrier(){
 		if (this.getProject() != null){
-			new PanneauCalendrier(this.getProject());
+			this.getContentPane().add(new PanneauCalendrier(this.getProject()));
 		}
 	}
 	
