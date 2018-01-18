@@ -1,4 +1,5 @@
 package gestionprojet.controleur.actions;
+import gestionprojet.view.ui.Fenetre.FenetreOptionLot;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
@@ -15,11 +16,10 @@ public class ActionCreerLot extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		String action = e.getActionCommand();
-		if(action.equals(NOM_ACTION)){
-			FenetreCreationLot fenetre = new FenetreCreationLot(); 
-		}
-		
+		FenetreOptionLot fenetre = new FenetreOptionLot(); 
+		fenetre.getBoutonValider().setAction(new ActionCreationL());
+		fenetre.getBoutonAnnule().setAction(new ActionAnnuler(fenetre));
+		fenetre.setVisible(true);
 	}
 
 }

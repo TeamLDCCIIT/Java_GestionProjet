@@ -1,7 +1,10 @@
 package gestionprojet.controleur.actions;
-import gestionprojet.view.ui.*;
-import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+
+import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
+import gestionprojet.view.ui.Fenetre.FenetreOptionProjet;
 
 public class ActionCreerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
@@ -12,8 +15,9 @@ public class ActionCreerProjet extends AbstractAction{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		FenetreCreationProjet fenetre = new FenetreCreationProjet();
+		FenetreOptionProjet fenetre = FenetreOptionProjet.getInstance();
+		fenetre.getBoutonValider().setAction(new ActionCreationP());
+		fenetre.getBoutonAnnule().setAction(new ActionAnnuler(fenetre));
 		fenetre.setVisible(true);
 		}
 	}

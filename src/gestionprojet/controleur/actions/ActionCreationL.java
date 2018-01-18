@@ -1,22 +1,19 @@
 package gestionprojet.controleur.actions;
 
-import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
 
-public class ActionSupprimer extends AbstractAction{
-	
+public class ActionCreationL extends AbstractAction {
+
 	private static final long serialVersionUID = 1L;
-	public static final String NOM_ACTION = "Supprimer";
-	
-	public ActionSupprimer(){
-		super(NOM_ACTION);
+	public ActionCreationL(){
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		//A FAIRE QUAND VU CALENDRIER SERA FAIT
 		
 	}
-	
+
 	
 }

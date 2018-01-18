@@ -1,11 +1,14 @@
-package gestionprojet.view.ui;
+package gestionprojet.view.ui.Fenetre;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-
+import gestionprojet.controleur.actions.ActionAnnuler;
+import gestionprojet.controleur.actions.ActionClickDroit;
+import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
+import gestionprojet.controleur.actions.ActionOuvrir;
 import gestionprojet.modele.Projet;
 
 public class FenetreGestionDeProjet extends JFrame {
@@ -14,13 +17,17 @@ public class FenetreGestionDeProjet extends JFrame {
 //-------------Attributs-------------
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
-	private Projet currentProjet;
+	private Projet currentProject;
+	
 //-------------Constructeur-------------
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.initMenuBar();
+		
+		this.addMouseListener(new ActionClickDroit(this));
+		
 		this.pack();
 	}
 //-------------Getter-------------	
@@ -30,10 +37,14 @@ public class FenetreGestionDeProjet extends JFrame {
 		}
 		return instance;
 	}
+	public Projet getProject(){
+		return this.currentProject;
+	}
+	
 	
 //-------------Setter-------------
 public void setProjet(Projet projet){
-	this.currentProjet=projet;
+	this.currentProject=projet;
 }
 //-------------Methodes-------------
 	private void initMenuBar(){
@@ -62,6 +73,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
+		menuItem.addActionListener(new ActionOuvrir());
 		menu.add(menuItem);
 		
 		menuItem = new JMenuItem("Enregistrer");
@@ -72,7 +84,8 @@ public void setProjet(Projet projet){
 		menu.addSeparator();
 		
 		//Ajout de l'option quitter au menu fichier
-		menuItem = new JMenuItem("Quitter");
+		menuItem = new JMenuItem(new ActionAnnuler(this));
+		menuItem.setText("Quitter");
 		menu.add(menuItem);
 		
 		//Ajout du menu fichier � la bar de menu
@@ -83,6 +96,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout de l'option nouveau Lot au menu Lot
 		menuItem = new JMenuItem("Nouveau lot");
+		menuItem.addActionListener(new ActionCreerLot());
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
@@ -90,7 +104,7 @@ public void setProjet(Projet projet){
 		menu.addSeparator();
 		
 		//Ajout des options gris�es de base modifier et supprimer au menu lot
-		menuItem = new JMenuItem("modifier");
+		menuItem = new JMenuItem("Modifier");
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
@@ -102,7 +116,11 @@ public void setProjet(Projet projet){
 		menuBar.add(menu);
 		
 		//Ajout de la bar � la fen�tre
-		this.add(menuBar);
+		this.setJMenuBar(menuBar);
+		
 	}
 	
+	
+	
 }
+

@@ -1,22 +1,23 @@
 package gestionprojet.controleur.actions;
-
+import java.awt.Window;
 import java.awt.event.ActionEvent;
-import javax.swing.AbstractAction;
 
-public class ActionSupprimer extends AbstractAction{
-	
+import javax.swing.AbstractAction;
+import javax.swing.JFrame;
+
+public class ActionAnnuler extends AbstractAction{
 	private static final long serialVersionUID = 1L;
-	public static final String NOM_ACTION = "Supprimer";
+	public static final String NOM_ACTION = "Annuler";
+	Window fenetre;
 	
-	public ActionSupprimer(){
+	public ActionAnnuler(Window fenetre){
 		super(NOM_ACTION);
+		this.fenetre=fenetre;
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		//A FAIRE QUAND VU CALENDRIER SERA FAIT
-		
+		fenetre.dispose();		
 	}
-	
-	
 }
