@@ -3,6 +3,7 @@ package gestionprojet.view.ui.Panneau;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -11,24 +12,58 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import gestionprojet.modele.Lot;
+import gestionprojet.modele.Personne;
+
 public class PanneauBasProjet extends JPanel {
 	 
 	private JTextField nom;
 	private JTextField prenom;
 	private JTextField fonction;
+	private  ArrayList<Personne> personne = new ArrayList<Personne>();
 	
+	/**
+	 * Constructeur
+	 */
 	public PanneauBasProjet(){
 		super();
 		this.afficheListe();
 		this.initBoutonAjouter();
-		
 	}
 
+	public void setPersonne(ArrayList<Personne> personne) {
+		this.personne = personne;
+	}
+
+	public ArrayList<Personne> getPersonne() {
+		return personne;
+	}
+
+	public JTextField getNom() {
+		return nom;
+	}
+
+	public JTextField getPrenom() {
+		return prenom;
+	}
+
+	public JTextField getFonction() {
+		return fonction;
+	}
+
+	/**
+	 * Affiche la liste
+	 */
 	private void afficheListe() {
 		// TODO Auto-generated method stub
-		
+		JPanel panneauList = new JPanel();
+		panneauList.setBackground(new Color(255,0,0));
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		this.add(panneauList);
 	}
-
+	/**
+	 * Initialise le bouton Ajouter
+	 */
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
 		panneauChamp.setBackground(new Color(150,200,10));

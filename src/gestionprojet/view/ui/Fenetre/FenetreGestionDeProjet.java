@@ -1,5 +1,7 @@
 package gestionprojet.view.ui.Fenetre;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -20,10 +22,14 @@ public class FenetreGestionDeProjet extends JFrame {
 	private Projet currentProject;
 	
 //-------------Constructeur-------------
+	/**
+	 * constructeur
+	 */
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
@@ -31,22 +37,37 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.pack();
 	}
 //-------------Getter-------------	
+	/**
+	 * Getter
+	 * @return instance FenetreGestionDeProjet
+	 */
 	public static FenetreGestionDeProjet getInstance(){
 		if (instance==null){
 			instance=new FenetreGestionDeProjet();
 		}
 		return instance;
 	}
+	/**
+	 * Getter
+	 * @return currentProject Projet
+	 */
 	public Projet getProject(){
 		return this.currentProject;
 	}
 	
 	
 //-------------Setter-------------
-public void setProjet(Projet projet){
-	this.currentProject=projet;
-}
+	/**
+	 * Setter
+	 * @param projet Projet
+	 */
+	public void setProjet(Projet projet){
+		this.currentProject=projet;
+	}
 //-------------Methodes-------------
+	/**
+	 * initialisation de la barre de menu
+	 */
 	private void initMenuBar(){
 		//creation de la bar de menu
 		menuBar = new JMenuBar();
@@ -85,6 +106,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout de l'option quitter au menu fichier
 		menuItem = new JMenuItem(new ActionAnnuler(this));
+		menuItem.setText("Quitter");
 		menu.add(menuItem);
 		
 		//Ajout du menu fichier � la bar de menu
@@ -96,7 +118,7 @@ public void setProjet(Projet projet){
 		//Ajout de l'option nouveau Lot au menu Lot
 		menuItem = new JMenuItem("Nouveau lot");
 		menuItem.addActionListener(new ActionCreerLot());
-		menuItem.setEnabled(false);
+		//menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
 		//ajout d'un separteur

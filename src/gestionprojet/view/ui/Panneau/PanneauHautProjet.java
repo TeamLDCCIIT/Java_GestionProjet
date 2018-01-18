@@ -19,7 +19,9 @@ public class PanneauHautProjet extends JPanel {
 	private JTextField nomProjet;
 	private JDatePickerImpl datePickerDebut;
 	private JDatePickerImpl datePickerFin;
-
+	/**
+	 * Constructeur
+	 */
 	public PanneauHautProjet(){
 		super();
 		
@@ -31,39 +33,52 @@ public class PanneauHautProjet extends JPanel {
 	}
 
 
-
+	/**
+	 * Getter
+	 * @return nomProjet JTextField
+	 */
 	public JTextField getNomProjet() {
 		return nomProjet;
 	}
-
-
+	/**
+	 * Setter
+	 * @param nomProjet JTextField
+	 */
 	public void setNomProjet(JTextField nomProjet) {
 		this.nomProjet = nomProjet;
 	}
-
-
+	/**
+	 * Getter
+	 * @return datePickerDebut JDatePickerImpl
+	 */
 	public JDatePickerImpl getDatePickerDebut() {
 		return datePickerDebut;
 	}
-
-
+	/**
+	 * Setter
+	 * @param datePickerDebut JDatePickerImpl
+	 */
 	public void setDatePickerDebut(JDatePickerImpl datePickerDebut) {
 		this.datePickerDebut = datePickerDebut;
 	}
-
-
+	/**
+	 * Getter
+	 * @return datePickerFin JDatePickerImpl
+	 */
 	public JDatePickerImpl getDatePickerFin() {
 		return datePickerFin;
 	}
-
-
+	/**
+	 * Setter
+	 * @param datePickerFin JDatePickerImpl
+	 */
 	public void setDatePickerFin(JDatePickerImpl datePickerFin) {
 		this.datePickerFin = datePickerFin;
 	}
-
-
-	
-	
+	/**
+	 * Générer des DatePicker
+	 * @return datePicker JDatePickerImpl 
+	 */
 	private JDatePickerImpl generateDatePicker(){
 
 		Properties p = new Properties();
@@ -78,8 +93,9 @@ public class PanneauHautProjet extends JPanel {
 		return datePicker;
 		
 	}
-	
-	
+	/**
+	 * Initialise le composant
+	 */
 	private void initComponent() {
 		
 		JLabel nomProjetText = new JLabel("Nom du projet : ");

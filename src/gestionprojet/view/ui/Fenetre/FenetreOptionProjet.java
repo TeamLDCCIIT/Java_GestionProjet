@@ -13,7 +13,9 @@ import gestionprojet.view.ui.Panneau.PanneauHautProjet;
 public class FenetreOptionProjet extends FenetreOption {
 //-------------Constantes-------------
 	public static final String DEFAULT_TITLE = "Creer un Projet";
-	
+	/**
+	 * Constructeur
+	 */
 	public FenetreOptionProjet(){
 		super();
 		this.setTitle(FenetreOptionProjet.DEFAULT_TITLE);
@@ -21,7 +23,10 @@ public class FenetreOptionProjet extends FenetreOption {
 	
 //-------------Attribut-------------
 	private static FenetreOptionProjet instance;
-	
+	/**
+	 * getter
+	 * @return instance FenetreOptionProjet
+	 */
 	public static FenetreOptionProjet getInstance() {
 		if (instance == null){
 			instance = new FenetreOptionProjet();
@@ -42,6 +47,10 @@ public class FenetreOptionProjet extends FenetreOption {
 		this.setPanneauBas(new PanneauBasProjet());
 		this.getPanneauBas().setVisible(false);
 		this.getContentPane().add(this.getPanneauBas());
+		
+	}
+	
+	public void AfficherCreationProjet(){
 		
 	}
 

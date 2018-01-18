@@ -10,7 +10,9 @@ import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
 
 public class ActionClickDroit implements MouseListener {
 	public FenetreGestionDeProjet fenetre;
-	
+	/*
+	 * @param fenetre
+	 */
 	public ActionClickDroit(FenetreGestionDeProjet fenetre){
 		this.fenetre = fenetre;
 	}
@@ -31,6 +33,7 @@ public class ActionClickDroit implements MouseListener {
 
 			contextMenu.setEnabled(true);
 			contextMenu.setVisible(true);
+			
 			contextMenu.setPopupMenuVisible(true);
 		}
 	}
