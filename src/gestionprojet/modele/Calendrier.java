@@ -15,15 +15,11 @@ import java.util.GregorianCalendar;
 public class Calendrier {
 
 	//Attributs
-	//TODO voir frameworks pour ajouter widget calendrier
-	private Collection<Lot> lot = new ArrayList<>();
-	//private Calendar calendar = new GregorianCalendar();
 	private Date startDate;
 	private Date endDate;
 	
 
 	//Constructeur
-	//TODO vérifier si startDate < endDate
 	public Calendrier(Date startDate, Date endDate) {
 		if (endDate.after(startDate)) {
 			this.startDate = startDate;
@@ -54,11 +50,6 @@ public class Calendrier {
 	}
 
 	//-----------Accesseurs------------
-	//TODO à supprimer ?
-	public Collection<Lot> getLot(){
-		return this.lot;
-	}
-	
 	public Date getStartDate(){
 		return this.startDate;
 	}
@@ -112,8 +103,6 @@ public class Calendrier {
 		datesInRange.add(endResult);
 		
 		return datesInRange;
-		
-		
 	}
 
 }

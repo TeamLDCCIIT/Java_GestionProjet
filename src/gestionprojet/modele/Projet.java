@@ -12,13 +12,12 @@ public class Projet {
 	private String name;
 	private ArrayList<Lot> lotList = new ArrayList<Lot>();
 	private Calendrier calendar;
-	private ArrayList<Personne> lotResponsible = new ArrayList<Personne>();
+	private ArrayList<Personne> personList = new ArrayList<Personne>();
 	
 	//Constructeur
-	//TODO ajouter les listes ?
 	public Projet(String name, Calendrier calendar) {
 		this.name = name;
-		this.calendar = calendar;
+		this.calendar = calendar;		
 	}
 	
 	//----------------------Accesseurs--------------------------
@@ -39,7 +38,7 @@ public class Projet {
 	}
 	
 	public ArrayList<Personne> getLotResponsible(){
-		return this.lotResponsible;
+		return this.personList;
 	}
 	
 	//------------------------Mutateurs--------------------------	
@@ -56,7 +55,7 @@ public class Projet {
 	}
 	
 	public void setLotResponsible(ArrayList<Personne> lotResponsible){
-		this.lotResponsible = lotResponsible;
+		this.personList = lotResponsible;
 	}
 	
 	//Méthodes
@@ -78,5 +77,4 @@ public class Projet {
 			
 		}
 	}
-
 }

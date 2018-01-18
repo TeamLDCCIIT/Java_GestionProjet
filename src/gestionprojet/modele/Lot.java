@@ -1,7 +1,9 @@
 package gestionprojet.modele;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Vector;
 
 /*
@@ -16,6 +18,7 @@ public class Lot {
 	private Date startDate;
 	private Date endDate;
 	private String name;
+	private String description;
 	//TODO ordonner la liste en fonction des dates de début et fin de chaque lot
 	private ArrayList<Personne> personList = new ArrayList<Personne>();
 	private ArrayList<Tache> tasks = new ArrayList<Tache>();
@@ -76,6 +79,10 @@ public class Lot {
 		return this.tasks;
 	}
 	
+	public String getDescription(){
+		return this.description;
+	}
+	
 	//-------------Mutateurs--------------	
 	
 	public void setStartDate(Date startDate){
@@ -99,6 +106,33 @@ public class Lot {
 		this.tasks = tasks;
 	}
 	
-	//Méthodes
+	public void setDescription(String description){
+		this.description = description;
+	}
 	
+	//Méthodes
+	//Renvoies la liste des dates entre le début et la fin d'un lot
+	public ArrayList<String> getDatesBetween(){
+		ArrayList<String> datesInRange = new ArrayList<>();
+		
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(this.getStartDate());
+		
+		Calendar endCalendar = new GregorianCalendar();
+		endCalendar.setTime(this.getEndDate());
+		
+		while(calendar.before(endCalendar)){
+			String result = calendar.getTime().toString();
+			String[] parts = result.split(" ");
+			result = parts[1] +" " + parts[2] + " " + parts[5];
+			datesInRange.add(result);
+			calendar.add(Calendar.DATE, 1);
+		}
+		String endResult = endCalendar.getTime().toString();
+		String[] parts = endResult.split(" ");
+		endResult = parts[1] +" " + parts[2] + " " + parts[5];
+		datesInRange.add(endResult);
+		
+		return datesInRange;
+	}
 }
