@@ -6,18 +6,22 @@ import javax.swing.AbstractAction;
 
 import gestionprojet.modele.Projet;
 import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
+import gestionprojet.view.ui.Fenetre.FenetreOptionProjet;
+import gestionprojet.view.ui.Panneau.PanneauBasProjet;
 
 public class ActionAjouterPersonne extends AbstractAction {
 	public static final String NOM_ACTION = "Ajouter";
-	private Projet projet;
 	
-	public ActionAjouterPersonne(Projet projet){
+	public ActionAjouterPersonne(){
 		super(NOM_ACTION);
-		this.projet = projet;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		PanneauBasProjet panneauBas = (PanneauBasProjet) FenetreOptionProjet.getInstance().getPanneauBas();
+		String nom = panneauBas.getNom().getText();
+		String prenom = panneauBas.getPrenom().getText();
+		String fonction = panneauBas.getFonction().getText();
 		
 		
 	}

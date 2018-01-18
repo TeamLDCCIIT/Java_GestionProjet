@@ -31,6 +31,7 @@ public class ActionClickDroit implements MouseListener {
 
 			contextMenu.setEnabled(true);
 			contextMenu.setVisible(true);
+			
 			contextMenu.setPopupMenuVisible(true);
 		}
 	}

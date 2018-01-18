@@ -24,6 +24,18 @@ public class PanneauBasProjet extends JPanel {
 		
 	}
 
+	public JTextField getNom() {
+		return nom;
+	}
+
+	public JTextField getPrenom() {
+		return prenom;
+	}
+
+	public JTextField getFonction() {
+		return fonction;
+	}
+
 	private void afficheListe() {
 		// TODO Auto-generated method stub
 		
