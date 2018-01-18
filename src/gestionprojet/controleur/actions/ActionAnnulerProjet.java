@@ -8,7 +8,9 @@ public class ActionAnnulerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION = "Annuler";
 	FenetreOptionProjet fenetre;
-	
+	/*
+	 * @param fenetre
+	 */
 	public ActionAnnulerProjet(FenetreOptionProjet fenetre){
 		super(NOM_ACTION);
 		this.fenetre = fenetre;

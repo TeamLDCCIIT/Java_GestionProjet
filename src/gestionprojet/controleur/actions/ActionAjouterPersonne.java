@@ -10,7 +10,9 @@ import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
 public class ActionAjouterPersonne extends AbstractAction {
 	public static final String NOM_ACTION = "Ajouter";
 	private Projet projet;
-	
+	/**
+	 * @param projet
+	 */
 	public ActionAjouterPersonne(Projet projet){
 		super(NOM_ACTION);
 		this.projet = projet;

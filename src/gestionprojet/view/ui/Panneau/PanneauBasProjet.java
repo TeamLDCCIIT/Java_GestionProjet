@@ -16,19 +16,25 @@ public class PanneauBasProjet extends JPanel {
 	private JTextField nom;
 	private JTextField prenom;
 	private JTextField fonction;
-	
+	/**
+	 * Constructeur
+	 */
 	public PanneauBasProjet(){
 		super();
 		this.afficheListe();
 		this.initBoutonAjouter();
 		
 	}
-
+	/**
+	 * Affiche la liste
+	 */
 	private void afficheListe() {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * Initialise le bouton Ajouter
+	 */
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
 		panneauChamp.setBackground(new Color(150,200,10));

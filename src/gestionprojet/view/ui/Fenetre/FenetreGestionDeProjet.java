@@ -20,6 +20,9 @@ public class FenetreGestionDeProjet extends JFrame {
 	private Projet currentProject;
 	
 //-------------Constructeur-------------
+	/**
+	 * constructeur
+	 */
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -31,22 +34,37 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.pack();
 	}
 //-------------Getter-------------	
+	/**
+	 * Getter
+	 * @return instance FenetreGestionDeProjet
+	 */
 	public static FenetreGestionDeProjet getInstance(){
 		if (instance==null){
 			instance=new FenetreGestionDeProjet();
 		}
 		return instance;
 	}
+	/**
+	 * Getter
+	 * @return currentProject Projet
+	 */
 	public Projet getProject(){
 		return this.currentProject;
 	}
 	
 	
 //-------------Setter-------------
-public void setProjet(Projet projet){
-	this.currentProject=projet;
-}
+	/**
+	 * Setter
+	 * @param projet Projet
+	 */
+	public void setProjet(Projet projet){
+		this.currentProject=projet;
+	}
 //-------------Methodes-------------
+	/**
+	 * initialisation de la barre de menu
+	 */
 	private void initMenuBar(){
 		//creation de la bar de menu
 		menuBar = new JMenuBar();
