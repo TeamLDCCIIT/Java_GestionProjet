@@ -22,6 +22,9 @@ public class PanneauBasProjet extends JPanel {
 	private JTextField fonction;
 	private  ArrayList<Personne> personne = new ArrayList<Personne>();
 	
+	/**
+	 * Constructeur
+	 */
 	public PanneauBasProjet(){
 		super();
 		this.afficheListe();
@@ -48,6 +51,9 @@ public class PanneauBasProjet extends JPanel {
 		return fonction;
 	}
 
+	/**
+	 * Affiche la liste
+	 */
 	private void afficheListe() {
 		// TODO Auto-generated method stub
 		JPanel panneauList = new JPanel();
@@ -55,7 +61,9 @@ public class PanneauBasProjet extends JPanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.add(panneauList);
 	}
-
+	/**
+	 * Initialise le bouton Ajouter
+	 */
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
 		panneauChamp.setBackground(new Color(150,200,10));

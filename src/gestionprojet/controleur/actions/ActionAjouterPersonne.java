@@ -13,8 +13,11 @@ import gestionprojet.view.ui.Panneau.PanneauBasProjet;
 
 public class ActionAjouterPersonne extends AbstractAction {
 	public static final String NOM_ACTION = "Ajouter";
-	
-	public ActionAjouterPersonne(){
+	private Projet projet;
+	/**
+	 * @param projet
+	 */
+	public ActionAjouterPersonne(Projet projet){
 		super(NOM_ACTION);
 	}
 	
@@ -27,7 +30,7 @@ public class ActionAjouterPersonne extends AbstractAction {
 		ArrayList<Personne> personne = panneauBas.getPersonne();
 		personne.add(new Personne(nom, prenom, fonction));
 		
-		//TO DO refresh la fenêtre
+		//TO DO refresh la fenï¿½tre
 		
 		
 	}

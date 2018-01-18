@@ -15,15 +15,17 @@ import java.util.GregorianCalendar;
 public class Calendrier {
 
 	//Attributs
-	//TODO voir frameworks pour ajouter widget calendrier
-	private Collection<Lot> lot = new ArrayList<>();
-	//private Calendar calendar = new GregorianCalendar();
 	private Date startDate;
 	private Date endDate;
 	
 
 	//Constructeur
-	//TODO vérifier si startDate < endDate
+	/**
+	 * Constructeur
+	 * @param startDate Date
+	 * @param endDate Date
+	 */
+
 	public Calendrier(Date startDate, Date endDate) {
 		if (endDate.after(startDate)) {
 			this.startDate = startDate;
@@ -33,7 +35,11 @@ public class Calendrier {
 			this.endDate = startDate;
 		}
 	}
-	
+	/**
+	 * Constructeur
+	 * @param startDate String
+	 * @param endDate String
+	 */
 	public Calendrier(String startDate, String endDate) {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			
@@ -54,19 +60,24 @@ public class Calendrier {
 	}
 
 	//-----------Accesseurs------------
-	//TODO à supprimer ?
-	public Collection<Lot> getLot(){
-		return this.lot;
-	}
-	
+	/**
+	 * Getter
+	 * @return startDate Date
+	 */
 	public Date getStartDate(){
 		return this.startDate;
 	}
-	
+	/**
+	 * Getter
+	 * @return endDate Date
+	 */
 	public Date getEndDate(){
 		return this.endDate;
 	}
-	
+	/**
+	 * Getter
+	 * @return diff int
+	 */
 	public int getDurationInDays() {
 		Calendar startCalendar = new GregorianCalendar();
 		startCalendar.setTime(this.getStartDate());
@@ -77,10 +88,17 @@ public class Calendrier {
 		return diff;
 	}
 	//-----------Mutateurs------------
+	/**
+	 * Setter
+	 * @param startDate Date
+	 */
 	public void setStartDate(Date startDate){
 		this.startDate = startDate;
 	}
-	
+	/**
+	 * Setter
+	 * @param endDate Date
+	 */
 	public void setEndDate(Date endDate){
 		this.endDate = endDate;
 	}
@@ -90,6 +108,10 @@ public class Calendrier {
 	//Source : "http://www.baeldung.com/java-between-dates"
 	//Renvoie la liste des dates entre le début et la fin du projet 
 	//TODO ajouter méthode split pour voir un nom propre par colonne
+	/**
+	 * Renvoie la liste des dates entre le début et la fin du projet 
+	 * @return datesInRange ArrayList<String>
+	 */
 	public ArrayList<String> getDatesBetween(){
 		ArrayList<String> datesInRange = new ArrayList<>();
 		
@@ -112,8 +134,6 @@ public class Calendrier {
 		datesInRange.add(endResult);
 		
 		return datesInRange;
-		
-		
 	}
 
 }
