@@ -14,9 +14,11 @@ import java.util.Date;
 public class ActionCreationP extends AbstractAction{
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION ="Valider";
+	FenetreOptionProjet fenetre;
 	
 	public ActionCreationP(){
 		super(NOM_ACTION);
+		this.fenetre = fenetre;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -36,5 +38,6 @@ public class ActionCreationP extends AbstractAction{
 		fenetreDeP.pack();
 		fenetreO.dispose();
 	}
+	
 
 }

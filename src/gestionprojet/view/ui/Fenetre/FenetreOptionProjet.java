@@ -44,6 +44,10 @@ public class FenetreOptionProjet extends FenetreOption {
 		this.getContentPane().add(this.getPanneauBas());
 		
 	}
+	
+	public void AfficherCreationProjet(){
+		
+	}
 
 
 
