@@ -35,19 +35,19 @@ public class PanneauBasProjet extends JPanel {
 		panneauChamp.setLayout(new BoxLayout(panneauChamp, BoxLayout.LINE_AXIS));
 		panneauChamp.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		panneauChamp.add(Box.createHorizontalGlue());
-		panneauChamp.add(new JLabel("nom : "));
+		panneauChamp.add(new JLabel("Nom : "));
 		panneauChamp.add(Box.createRigidArea(new Dimension(5, 0)));
 		this.nom = new JTextField(5);
 		panneauChamp.add(nom);
 		
 		panneauChamp.add(Box.createRigidArea(new Dimension(10, 0)));
-		panneauChamp.add(new JLabel("prenom : "));
+		panneauChamp.add(new JLabel("Prenom : "));
 		panneauChamp.add(Box.createRigidArea(new Dimension(5, 0)));
 		this.prenom = new JTextField(5);
 		panneauChamp.add(prenom);
 		
 		panneauChamp.add(Box.createRigidArea(new Dimension(10, 0)));
-		panneauChamp.add(new JLabel("fonction : "));
+		panneauChamp.add(new JLabel("Fonction : "));
 		panneauChamp.add(Box.createRigidArea(new Dimension(5, 0)));
 		this.fonction = new JTextField(10);
 		panneauChamp.add(fonction);

@@ -113,7 +113,7 @@ public abstract class FenetreOption extends JDialog {
 		JPanel panneauPlus = new JPanel();
 		panneauPlus.setLayout(new BoxLayout(panneauPlus, BoxLayout.LINE_AXIS));
 		boutonPlus = new JButton(new ActionDerouler(this));
-		boutonPlus.setText("plus");
+		boutonPlus.setText("Plus");
 		panneauPlus.add(Box.createRigidArea(new Dimension(10, 0)));
 		panneauPlus.add(boutonPlus);
 		panneauPlus.add(Box.createHorizontalGlue());
@@ -148,6 +148,11 @@ public abstract class FenetreOption extends JDialog {
 	public void afficherMasquer(){
 		this.getPanneauBas().setVisible(!this.isDeveloppe());
 		this.setDeveloppe(!this.isDeveloppe());
+		if (this.isDeveloppe()){
+			this.boutonPlus.setText("Moins");
+		}else{
+			this.boutonPlus.setText("Plus");
+		}
 		this.pack();
 	}
 }

@@ -82,9 +82,9 @@ public class PanneauHautProjet extends JPanel {
 	
 	private void initComponent() {
 		
-		JLabel nomProjetText = new JLabel("nom du projet : ");
-		JLabel dateDebutText = new JLabel("date de debut : ");
-		JLabel dateFinText = new JLabel("date de fin : ");
+		JLabel nomProjetText = new JLabel("Nom du projet : ");
+		JLabel dateDebutText = new JLabel("Date de debut : ");
+		JLabel dateFinText = new JLabel("Date de fin : ");
 		
 		this.setNomProjet(new JTextField(10));
 		this.setDatePickerDebut(this.generateDatePicker());
