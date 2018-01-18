@@ -85,6 +85,7 @@ public void setProjet(Projet projet){
 		
 		//Ajout de l'option quitter au menu fichier
 		menuItem = new JMenuItem(new ActionAnnuler(this));
+		menuItem.setText("Quitter");
 		menu.add(menuItem);
 		
 		//Ajout du menu fichier � la bar de menu
