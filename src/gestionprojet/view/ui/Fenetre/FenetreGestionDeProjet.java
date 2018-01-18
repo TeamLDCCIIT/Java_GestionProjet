@@ -1,5 +1,7 @@
 package gestionprojet.view.ui.Fenetre;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -27,6 +29,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
@@ -103,6 +106,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		
 		//Ajout de l'option quitter au menu fichier
 		menuItem = new JMenuItem(new ActionAnnuler(this));
+		menuItem.setText("Quitter");
 		menu.add(menuItem);
 		
 		//Ajout du menu fichier � la bar de menu
@@ -114,7 +118,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		//Ajout de l'option nouveau Lot au menu Lot
 		menuItem = new JMenuItem("Nouveau lot");
 		menuItem.addActionListener(new ActionCreerLot());
-		menuItem.setEnabled(false);
+		//menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
 		//ajout d'un separteur

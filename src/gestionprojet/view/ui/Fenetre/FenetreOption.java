@@ -16,7 +16,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import gestionprojet.controleur.actions.ActionAnnulerProjet;
+import gestionprojet.controleur.actions.ActionCreationP;
 import gestionprojet.controleur.actions.ActionDerouler;
 
 public abstract class FenetreOption extends JDialog {

@@ -16,6 +16,7 @@ public class Lot {
 	private Date startDate;
 	private Date endDate;
 	private String name;
+	private String description;
 	//TODO ordonner la liste en fonction des dates de début et fin de chaque lot
 	private ArrayList<Personne> personList = new ArrayList<Personne>();
 	private ArrayList<Tache> tasks = new ArrayList<Tache>();
@@ -141,6 +142,14 @@ public class Lot {
 	 */
 	public void setTasks(ArrayList<Tache> tasks){
 		this.tasks = tasks;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	//Méthodes
