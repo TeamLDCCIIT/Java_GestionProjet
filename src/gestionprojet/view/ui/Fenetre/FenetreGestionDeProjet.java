@@ -26,7 +26,6 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
