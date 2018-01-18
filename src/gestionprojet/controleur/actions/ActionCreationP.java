@@ -33,7 +33,7 @@ public class ActionCreationP extends AbstractAction{
 		dateFin =(Date) ((PanneauHautProjet)fenetreO.getPanneauHaut()).getDatePickerFin().getModel().getValue();
 		
 		fenetreDeP.setProjet(new Projet(nom, new Calendrier(dateDebut, dateFin)));
-		fenetreDeP.setTitle(nom+dateDebut.toString()+dateFin.toString());
+		fenetreDeP.setTitle(nom+"  DU " +dateDebut.toLocaleString()+" AU  " +dateFin.toLocaleString());
 		fenetreDeP.getProject().setLotResponsible(((PanneauBasProjet) fenetreO.getPanneauBas()).getPersonne());
 		fenetreDeP.pack();
 		fenetreO.dispose();

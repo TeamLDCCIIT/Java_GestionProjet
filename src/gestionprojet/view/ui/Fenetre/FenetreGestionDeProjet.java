@@ -1,5 +1,7 @@
 package gestionprojet.view.ui.Fenetre;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -24,6 +26,7 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
