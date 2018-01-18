@@ -97,7 +97,7 @@ public void setProjet(Projet projet){
 		//Ajout de l'option nouveau Lot au menu Lot
 		menuItem = new JMenuItem("Nouveau lot");
 		menuItem.addActionListener(new ActionCreerLot());
-		menuItem.setEnabled(false);
+		//menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
 		//ajout d'un separteur
