@@ -26,7 +26,9 @@ public class PanneauBasProjet extends JPanel {
 	private  ArrayList<Personne> personne = new ArrayList<Personne>();
 	private JTextArea panneau;
 	
-	
+	/**
+	 * Constructeur
+	 */
 	public PanneauBasProjet(){
 		super();
 		this.afficheListe();
@@ -53,7 +55,10 @@ public class PanneauBasProjet extends JPanel {
 		return fonction;
 	}
 
-	public void afficheListe() {
+	/**
+	 * Affiche la liste
+	 */
+	private void afficheListe() {
 		// TODO Auto-generated method stub
 		JPanel panneauList = new JPanel();
 		panneauList.setBackground(new Color(255,0,0));

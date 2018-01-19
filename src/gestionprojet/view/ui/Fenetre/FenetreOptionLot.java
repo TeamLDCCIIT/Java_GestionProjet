@@ -6,32 +6,29 @@ import gestionprojet.view.ui.Panneau.PanneauHautLot;
 public class FenetreOptionLot extends FenetreOption {
 
 	//-------------Constantes-------------
-		public static final String DEFAULT_TITLE = "Creer un Lot";
-		
-		public FenetreOptionLot(){
-			super();
-			this.setTitle(FenetreOptionLot.DEFAULT_TITLE);
-		}
-		
+	public static final String DEFAULT_TITLE = "Creer un Lot";
+	/**
+	 * Constructeur
+	 */
+	private FenetreOptionLot(){
+		super();
+		this.setTitle(FenetreOptionLot.DEFAULT_TITLE);
+	}
+
 	//-------------Attribut-------------
-		private static FenetreOptionLot instance;
-		
+	private static FenetreOptionLot instance;
+
 	//-------------Methode-------------	
-		public static FenetreOptionLot getInstance() {
-			if (instance == null){
-				instance = new FenetreOptionLot();
-			}
-			return instance;
+	/**
+	 * getter
+	 * @return instance FenetreOptionLot 
+	 */
+	public static FenetreOptionLot getInstance() {
+		if (instance == null){
+			instance = new FenetreOptionLot();
 		}
-		
-		
-		@Override
-		void initPanneauHaut() {
-			this.setPanneauHaut(new PanneauHautLot());
-			this.getPanneauHaut().setVisible(true);
-			this.getContentPane().add(this.getPanneauHaut());
-			
-		}
+		return instance;
+	}
 
 		@Override
 		void initPanneauBas() {

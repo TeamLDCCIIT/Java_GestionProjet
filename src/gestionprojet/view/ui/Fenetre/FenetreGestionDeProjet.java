@@ -1,17 +1,22 @@
 package gestionprojet.view.ui.Fenetre;
 
-import java.awt.Dimension;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.table.DefaultTableModel;
+
 import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
+import gestionprojet.modele.Lot;
 import gestionprojet.modele.Projet;
+import gestionprojet.view.ui.Panneau.PanneauCalendrier;
 
 public class FenetreGestionDeProjet extends JFrame {
 //-------------Constantes-------------
@@ -20,13 +25,17 @@ public class FenetreGestionDeProjet extends JFrame {
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
 	private Projet currentProject;
+	public PanneauCalendrier panneauCalendrier;
 	
 //-------------Constructeur-------------
+	/**
+	 * constructeur
+	 */
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		//this.afficherCalendrier();
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
@@ -34,21 +43,36 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.pack();
 	}
 //-------------Getter-------------	
+	/**
+	 * Getter
+	 * @return instance FenetreGestionDeProjet
+	 */
 	public static FenetreGestionDeProjet getInstance(){
 		if (instance==null){
 			instance=new FenetreGestionDeProjet();
 		}
 		return instance;
 	}
+	/**
+	 * Getter
+	 * @return currentProject Projet
+	 */
 	public Projet getProject(){
 		return this.currentProject;
 	}
 	
 //-------------Setter-------------
-public void setProjet(Projet projet){
-	this.currentProject=projet;
-}
+	/**
+	 * Setter
+	 * @param projet Projet
+	 */
+	public void setProjet(Projet projet){
+		this.currentProject=projet;
+	}
 //-------------Methodes-------------
+	/**
+	 * initialisation de la barre de menu
+	 */
 	private void initMenuBar(){
 		//creation de la bar de menu
 		menuBar = new JMenuBar();
@@ -73,7 +97,7 @@ public void setProjet(Projet projet){
 		//Ajout d'un separateur
 		menu.addSeparator();
 		
-		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
+		//Ajout des options Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
 		menuItem.addActionListener(new ActionOuvrir());
 		menu.add(menuItem);
@@ -114,12 +138,62 @@ public void setProjet(Projet projet){
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
-		//Ajout du menu Lot � la bar de menu
+		//Ajout du menu Lot � la barre de menu
 		menuBar.add(menu);
 		
-		//Ajout de la bar � la fen�tre
+		//Ajout de la barre � la fen�tre
 		this.setJMenuBar(menuBar);
 		
+	}
+	
+	public void afficherCalendrier(){
+		if (this.getProject() != null){
+			this.panneauCalendrier= new PanneauCalendrier(this.getProject());
+			this.getContentPane().add(this.panneauCalendrier);
+		}
+	}
+	
+	public void refreshTableau() {
+		DefaultTableModel mod = this.panneauCalendrier.model;
+		
+		//Retrait des rows
+		for(int i = 0; i < mod.getRowCount(); i++) {
+			mod.removeRow(i);
+		}
+		
+		//Ajout des lignes
+		for(Lot l : this.getProject().getLotList()) {
+			String[] row = new String[mod.getColumnCount()];
+			row[0] = l.getName();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-yyyy");
+			Date ddebut = l.getStartDate();
+			Date dfin 	= l.getEndDate();
+			
+			for(int i = 1; i < mod.getColumnCount(); i++) {
+				try {
+					String[] ddyyl = mod.getColumnName(i).split(" ");
+					String ddyy = ddyyl[1] + "-" + ddyyl[2];
+					
+					
+					Date date = sdf.parse(ddyy);
+					if(date.getTime() >= ddebut.getTime() - (86400000) && date.getTime() <= dfin.getTime()) {
+						row[i] = "X";
+					} else {
+						row[i] = " ";
+					}
+				} catch(Exception ex) {
+					ex.printStackTrace();
+					row[i] = " _ ";
+				}
+				
+			}
+			
+			mod.addRow(row);
+		}
+		
+		this.panneauCalendrier.model.fireTableDataChanged();
+		this.pack();
+		this.validate();
 	}
 	
 	

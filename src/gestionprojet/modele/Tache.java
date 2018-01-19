@@ -11,15 +11,26 @@ public class Tache {
 	Personne responsible;
 			
 	//Constructeur
+	/**
+	 * Constructeur
+	 * @param responsible Personne
+	 */
 	public Tache(Personne responsible) {	
 		this.responsible = responsible;
 	}
 			
 	//Accesseurs & Mutateurs
+	/**
+	 * Getter
+	 * @return responsible Personne
+	 */
 	public Personne getResponsible(){
 		return this.responsible;
 	}
-	
+	/**
+	 * Setter
+	 * @param responsible Personne
+	 */
 	public void setResponsible(Personne responsible){
 		this.responsible = responsible;
 	}

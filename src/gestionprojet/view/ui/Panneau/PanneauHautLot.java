@@ -19,7 +19,7 @@ public class PanneauHautLot extends JPanel {
 	
 	JTextField nom;
 	JDatePickerImpl dateDebut;
-	JSpinner Duree;
+	JDatePickerImpl dateFin;
 	JTextArea description;
 
 	public PanneauHautLot() {
@@ -40,20 +40,20 @@ public class PanneauHautLot extends JPanel {
 		this.nom = nom;
 	}
 
+	public JDatePickerImpl getDateFin() {
+		return dateFin;
+	}
+
+	public void setDateFin(JDatePickerImpl dateFin) {
+		this.dateFin = dateFin;
+	}
+
 	public JDatePickerImpl getDateDebut() {
 		return dateDebut;
 	}
 
 	public void setDateDebut(JDatePickerImpl dateDebut) {
 		this.dateDebut = dateDebut;
-	}
-
-	public JSpinner getDuree() {
-		return Duree;
-	}
-
-	public void setDuree(JSpinner duree) {
-		Duree = duree;
 	}
 
 	public JTextArea getDescription() {
@@ -72,8 +72,7 @@ public class PanneauHautLot extends JPanel {
 		
 		this.setNom(new JTextField(10));
 		this.setDateDebut(this.generateDatePicker());
-		SpinnerNumberModel numberModel = new SpinnerNumberModel(1,1,365,1);
-		this.setDuree(new JSpinner(numberModel));
+		this.setDateFin(this.generateDatePicker());
 		
 		this.setDescription(new JTextArea(5, 20));
 		this.getDescription().setLineWrap(true);
@@ -88,7 +87,7 @@ public class PanneauHautLot extends JPanel {
 			      .addGroup(((GroupLayout) this.getLayout()).createParallelGroup()
 		    		  .addComponent(this.getNom())
 		    		  .addComponent(this.getDateDebut())
-			          .addComponent(this.getDuree()))
+			          .addComponent(this.getDateFin()))
 			      .addGroup(((GroupLayout) this.getLayout()).createParallelGroup()
 			          .addComponent(description)
 			          .addComponent(this.getDescription()))
@@ -107,7 +106,7 @@ public class PanneauHautLot extends JPanel {
 			           .addComponent(this.getDescription()))
 			       .addGroup(((GroupLayout) this.getLayout()).createParallelGroup()
 			           .addComponent(duree)
-			           .addComponent(this.getDuree())) 
+			           .addComponent(this.getDateFin())) 
 				    );
 		
 		
