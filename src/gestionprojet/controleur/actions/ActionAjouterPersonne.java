@@ -23,13 +23,13 @@ public class ActionAjouterPersonne extends AbstractAction {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		PanneauBasProjet panneauBas = (PanneauBasProjet) FenetreOptionProjet.getInstance().getPanneauBas();
+		
 		String nom = panneauBas.getNom().getText();
 		String prenom = panneauBas.getPrenom().getText();
 		String fonction = panneauBas.getFonction().getText();
 		ArrayList<Personne> personne = panneauBas.getPersonne();
-		personne.add(new Personne(nom, prenom, fonction));
 		
-		//TO DO refresh la fen�tre
+		personne.add(new Personne(nom, prenom, fonction));
 		panneauBas.toString(personne);
 		FenetreOptionProjet.getInstance().pack();
 		

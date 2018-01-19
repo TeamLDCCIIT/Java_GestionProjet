@@ -8,7 +8,11 @@ public class ActionAnnuler extends AbstractAction{
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION = "Annuler";
 	Window fenetre;
-		
+	
+	/**
+	 * Action permettant d'annuler toutes actions de créations ou modifications
+	 * @param fenetre
+	 */
 	public ActionAnnuler(Window fenetre){
 		super(NOM_ACTION);
 		this.fenetre = fenetre;
@@ -16,7 +20,6 @@ public class ActionAnnuler extends AbstractAction{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		fenetre.dispose();		
 	}
 }

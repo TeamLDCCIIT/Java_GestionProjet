@@ -167,7 +167,6 @@ public abstract class FenetreOption extends JDialog {
 	 */
 	private void initPanneauBoutonValidation(){
 		this.setPanneauBoutousValidation(new JPanel());
-		this.getPanneauBoutousValidation().setBackground(new Color(150,200,20));
 		this.getPanneauBoutousValidation().setLayout(new BoxLayout(this.getPanneauBoutousValidation(), BoxLayout.LINE_AXIS));
 		this.getPanneauBoutousValidation().setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
@@ -184,8 +183,14 @@ public abstract class FenetreOption extends JDialog {
 		this.getPanneauBoutousValidation().setVisible(true);
 	}
 	
+	/**
+	 * Methode pour inititaliser l'affichage du panneauHaut
+	 */
 	abstract void initPanneauHaut();
 	
+	/**
+	 * Methode pour initialiser l'affichage du panneauBas
+	 */
 	abstract void initPanneauBas();
 	
 	/**

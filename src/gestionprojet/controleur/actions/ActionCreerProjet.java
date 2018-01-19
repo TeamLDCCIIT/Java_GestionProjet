@@ -10,6 +10,9 @@ public class ActionCreerProjet extends AbstractAction{
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION = "Nouveau Projet";
 	
+	/**
+	 * Action qui ouvre la fenêtre de creation de projet 
+	 */
 	public ActionCreerProjet(){
 		super(NOM_ACTION);
 	}

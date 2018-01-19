@@ -34,23 +34,42 @@ public class PanneauBasProjet extends JPanel {
 		this.afficheListe();
 		this.initBoutonAjouter();
 	}
-
+	/**
+	 * setter
+	 * @param personne
+	 */
 	public void setPersonne(ArrayList<Personne> personne) {
 		this.personne = personne;
 	}
-
+	
+	/**
+	 * getter
+	 * @return {@link Personne}
+	 */
 	public ArrayList<Personne> getPersonne() {
 		return personne;
 	}
-
+	
+	/**
+	 * getter
+	 * @return nom
+	 */
 	public JTextField getNom() {
 		return nom;
 	}
-
+	
+	/**
+	 * getter
+	 * @return
+	 */
 	public JTextField getPrenom() {
 		return prenom;
 	}
-
+	
+	/**
+	 * getter
+	 * 
+	 */
 	public JTextField getFonction() {
 		return fonction;
 	}
@@ -61,7 +80,6 @@ public class PanneauBasProjet extends JPanel {
 	private void afficheListe() {
 		// TODO Auto-generated method stub
 		JPanel panneauList = new JPanel();
-		panneauList.setBackground(new Color(255,0,0));
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		panneau = new JTextArea();
 		panneauList.add(panneau);
@@ -70,7 +88,11 @@ public class PanneauBasProjet extends JPanel {
 		
 	}
 
-	
+	/**
+	 * met a jour la liste de personne dans la fenêtre creation projet
+	 * @param personne
+	 * @return
+	 */
 	public String toString(ArrayList<Personne> personne){
 		String string = "";
 		for(int i =0; i<personne.size(); i++){
@@ -81,9 +103,13 @@ public class PanneauBasProjet extends JPanel {
 		this.panneau.setText(string);
 	return string;
 	}
+	
+	/**
+	 * initialisation du panneaux contenant les boutons qui permettent d'ajouter
+	 * une personne
+	 */
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
-		panneauChamp.setBackground(new Color(150,200,10));
 		panneauChamp.setLayout(new BoxLayout(panneauChamp, BoxLayout.LINE_AXIS));
 		panneauChamp.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		JScrollPane pane = new JScrollPane(panneauChamp);
@@ -111,7 +137,6 @@ public class PanneauBasProjet extends JPanel {
 		panneauChamp.add(new JButton(new ActionAjouterPersonne()));
 		
 		this.add(panneauChamp);
-		this.setBackground(new Color(0,0,0));
 		
 		
 	}

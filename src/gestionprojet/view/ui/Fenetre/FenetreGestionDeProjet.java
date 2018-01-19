@@ -35,10 +35,9 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		//this.afficherCalendrier();
 		this.initMenuBar();
 		
-		this.addMouseListener(new ActionClickDroit(this));
+		this.addMouseListener(new ActionClickDroit());
 		
 		this.pack();
 	}
@@ -74,7 +73,7 @@ public class FenetreGestionDeProjet extends JFrame {
 	 * initialisation de la barre de menu
 	 */
 	private void initMenuBar(){
-		//creation de la bar de menu
+		//creation de la barre de menu
 		menuBar = new JMenuBar();
 		
 		// Cr�ation d'onglet fichier

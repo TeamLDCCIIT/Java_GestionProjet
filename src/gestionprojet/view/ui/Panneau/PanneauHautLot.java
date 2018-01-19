@@ -22,6 +22,9 @@ public class PanneauHautLot extends JPanel {
 	JDatePickerImpl dateFin;
 	JTextArea description;
 
+	/**
+	 * 
+	 */
 	public PanneauHautLot() {
 		super();
 		
@@ -32,30 +35,58 @@ public class PanneauHautLot extends JPanel {
 		this.initComponent();
 	}
 
+
+	/**
+	 * getter
+	 * @return nom
+	 */
 	public JTextField getNom() {
 		return nom;
 	}
-
+	/**
+	 * setter
+	 * @param nom
+	 */
 	public void setNom(JTextField nom) {
 		this.nom = nom;
 	}
-
+	
+	/**
+	 * getter
+	 * @return dateFin
+	 */
 	public JDatePickerImpl getDateFin() {
 		return dateFin;
 	}
-
+	
+	/**
+	 * setter
+	 * @param dateFin
+	 */
 	public void setDateFin(JDatePickerImpl dateFin) {
 		this.dateFin = dateFin;
 	}
-
+	
+	/**
+	 * getter
+	 * @return dateDebut
+	 */
 	public JDatePickerImpl getDateDebut() {
 		return dateDebut;
 	}
-
+	
+	/**
+	 * setter
+	 * @param dateDebut
+	 */
 	public void setDateDebut(JDatePickerImpl dateDebut) {
 		this.dateDebut = dateDebut;
 	}
-
+	
+	/**
+	 * getter
+	 * @return description
+	 */
 	public JTextArea getDescription() {
 		return description;
 	}
@@ -63,7 +94,10 @@ public class PanneauHautLot extends JPanel {
 	public void setDescription(JTextArea description) {
 		this.description = description;
 	}
-
+	
+	/**
+	 * methode pour initialiser les differents elements du panneau
+	 */
 	private void initComponent() {
 		JLabel nom = new JLabel("Nom : ");
 		JLabel dateDebut = new JLabel("Date de debut : ");
@@ -112,6 +146,10 @@ public class PanneauHautLot extends JPanel {
 		
 	}
 	
+	/**
+	 * methode pour genere un objet DatePicker
+	 * @return
+	 */
 	private JDatePickerImpl generateDatePicker(){
 
 		Properties p = new Properties();

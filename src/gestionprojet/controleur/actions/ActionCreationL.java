@@ -15,7 +15,10 @@ public class ActionCreationL extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION ="Valider";
-
+	
+	/**
+	 * Action qui créer un lot et l'ajoutee au calendrier
+	 */
 	public ActionCreationL(){
 		super(NOM_ACTION);
 	}
@@ -28,15 +31,20 @@ public class ActionCreationL extends AbstractAction {
 
 		FenetreGestionDeProjet fenetreDeP = FenetreGestionDeProjet.getInstance();
 		FenetreOptionLot fenetreO = FenetreOptionLot.getInstance();
+		
+		PanneauHautLot panneauHaut = ((PanneauHautLot) fenetreO.getPanneauHaut());
 
-		nom = ((PanneauHautLot) fenetreO.getPanneauHaut()).getNom().getText();
-		dateDebut= (Date) ((PanneauHautLot) fenetreO.getPanneauHaut()).getDateDebut().getModel().getValue();
-		dateFin = (Date) ((PanneauHautLot) fenetreO.getPanneauHaut()).getDateFin().getModel().getValue();
-		description = ((PanneauHautLot) fenetreO.getPanneauHaut()).getDescription().getText();
+		nom = panneauHaut.getNom().getText();
+		dateDebut= (Date) panneauHaut.getDateDebut().getModel().getValue();
+		dateFin = (Date) panneauHaut.getDateFin().getModel().getValue();
+		description = panneauHaut.getDescription().getText();
+		
+		if(!nom.isEmpty() && dateDebut!=null && dateFin!=null && description!=null){
 		fenetreDeP.getProject().getLotList().add(new Lot(nom, dateDebut,dateFin,description));
+		
 		fenetreO.dispose();
-
 		fenetreDeP.refreshTableau();
+		}
 	}
 
 

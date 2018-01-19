@@ -76,7 +76,7 @@ public class PanneauHautProjet extends JPanel {
 		this.datePickerFin = datePickerFin;
 	}
 	/**
-	 * Générer des DatePicker
+	 * methode pour generer un objet DatePicker
 	 * @return datePicker JDatePickerImpl 
 	 */
 	private JDatePickerImpl generateDatePicker(){

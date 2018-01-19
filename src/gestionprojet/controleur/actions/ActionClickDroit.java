@@ -9,16 +9,19 @@ import javax.swing.JMenuItem;
 import gestionprojet.view.ui.Fenetre.FenetreGestionDeProjet;
 
 public class ActionClickDroit implements MouseListener {
-	public FenetreGestionDeProjet fenetre;
-	/*
+	/**
+	 * Action ouvrant un menu contextuel avec le clic droit
 	 * @param fenetre
-	 */
-	public ActionClickDroit(FenetreGestionDeProjet fenetre){
-		this.fenetre = fenetre;
+	 **/
+	public ActionClickDroit(){
+		super();
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
+		FenetreGestionDeProjet fenetre = FenetreGestionDeProjet.getInstance();
+		
 		// TODO Auto-generated method stub
 		if (e.getButton() == MouseEvent.BUTTON3) {
 			//System.out.println("modification et suppression");

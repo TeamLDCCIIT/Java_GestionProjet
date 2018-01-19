@@ -28,16 +28,22 @@ public class ActionCreationP extends AbstractAction{
 		FenetreGestionDeProjet fenetreDeP = FenetreGestionDeProjet.getInstance();
 		FenetreOptionProjet fenetreO = FenetreOptionProjet.getInstance();
 		
-		nom=((PanneauHautProjet)fenetreO.getPanneauHaut()).getNomProjet().getText();
-		dateDebut= (Date) ((PanneauHautProjet)fenetreO.getPanneauHaut()).getDatePickerDebut().getModel().getValue();
-		dateFin =(Date) ((PanneauHautProjet)fenetreO.getPanneauHaut()).getDatePickerFin().getModel().getValue();
+		PanneauHautProjet panneauHautProjet = ((PanneauHautProjet)fenetreO.getPanneauHaut());
 		
+		nom=panneauHautProjet.getNomProjet().getText();
+		dateDebut= (Date) panneauHautProjet.getDatePickerDebut().getModel().getValue();
+		dateFin =(Date) panneauHautProjet.getDatePickerFin().getModel().getValue();
+		
+		
+		if(!nom.isEmpty() && dateDebut!=null && dateFin!=null){
 		fenetreDeP.setProjet(new Projet(nom, new Calendrier(dateDebut, dateFin)));
 		fenetreDeP.setTitle(nom+"  DU " +dateDebut.toLocaleString()+" AU  " +dateFin.toLocaleString());
+		
 		fenetreDeP.getProject().setLotResponsible(((PanneauBasProjet) fenetreO.getPanneauBas()).getPersonne());
 		fenetreDeP.afficherCalendrier();
+		
 		fenetreDeP.pack();
-		fenetreO.dispose();
+		fenetreO.dispose();}
 	}
 	
 
