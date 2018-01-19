@@ -34,9 +34,9 @@ public class ActionCreationL extends AbstractAction {
 		dateFin = (Date) ((PanneauHautLot) fenetreO.getPanneauHaut()).getDateFin().getModel().getValue();
 		description = ((PanneauHautLot) fenetreO.getPanneauHaut()).getDescription().getText();
 		fenetreDeP.getProject().getLotList().add(new Lot(nom, dateDebut,dateFin,description));
-		fenetreDeP.panneauCalendrier.model.fireTableDataChanged();
+		fenetreDeP.afficherCalendrier();
 		fenetreDeP.validate();
-		System.out.println("ok");
+		fenetreO.dispose();
 		}
 
 	
