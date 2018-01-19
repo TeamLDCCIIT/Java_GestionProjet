@@ -75,7 +75,6 @@ public class PanneauBasProjet extends JPanel {
 			
 		}
 		this.panneau.setText(string);
-		this.panneau.setRows(string.length());
 	return string;
 	}
 	private void initBoutonAjouter() {

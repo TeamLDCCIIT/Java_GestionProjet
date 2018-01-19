@@ -29,6 +29,7 @@ public class ActionAjouterPersonne extends AbstractAction {
 		
 		//TO DO refresh la fen�tre
 		panneauBas.toString(personne);
+		FenetreOptionProjet.getInstance().pack();
 		
 	}
 

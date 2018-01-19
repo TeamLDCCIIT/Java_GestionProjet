@@ -1,5 +1,6 @@
 package gestionprojet.view.ui.Fenetre;
 
+import gestionprojet.view.ui.Panneau.PanneauBasLot;
 import gestionprojet.view.ui.Panneau.PanneauHautLot;
 
 public class FenetreOptionLot extends FenetreOption {
@@ -34,7 +35,9 @@ public class FenetreOptionLot extends FenetreOption {
 
 		@Override
 		void initPanneauBas() {
-			// TODO Auto-generated method stub
+			this.setPanneauBas(new PanneauBasLot());
+			this.getPanneauBas().setVisible(true);
+			this.getContentPane().add(this.getPanneauBas());
 			
 		}
 	
