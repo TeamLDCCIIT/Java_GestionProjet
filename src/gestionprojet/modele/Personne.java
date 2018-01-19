@@ -15,6 +15,12 @@ public class Personne {
 	private String function;
 	
 	//Constructeur
+	/**
+	 * Constructeur
+	 * @param lastName String
+	 * @param firstName String
+	 * @param function String
+	 */
 	public Personne(String lastName, String firstName, String function){
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -22,27 +28,47 @@ public class Personne {
 	}	
 
 	//-----------Accesseurs------------
+	/**
+	 * Getter
+	 * @return lastName String
+	 */
 	public String getLastName(){
 		return this.lastName;
 	}
-	
+	/**
+	 * Getter
+	 * @return firstName String
+	 */
 	public String getFirstName(){
 		return this.firstName;
 	}
-	
+	/**
+	 * Getter
+	 * @return function String
+	 */
 	public String getFunction(){
 		return this.function;
 	}
 	
 	//-------------Mutateurs--------------	
+	/**
+	 * Setter
+	 * @param lastName String
+	 */
 	public void setLastName(String lastName){
 		this.lastName = lastName;
 	}
-	
+	/**
+	 * Setter
+	 * @param firstName String
+	 */
 	public void setFirstName(String firstName){
 		this.firstName = firstName;
 	}
-	
+	/**
+	 * Setter
+	 * @param function String
+	 */
 	public void setFunction(String function){
 		this.function = function;
 	}

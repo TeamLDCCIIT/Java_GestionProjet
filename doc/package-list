@@ -1,0 +1,7 @@
+gestionprojet
+gestionprojet.controleur.actions
+gestionprojet.controleur.outils
+gestionprojet.modele
+gestionprojet.view.ui.Fenetre
+gestionprojet.view.ui.Panneau
+gestionprojet.vue.ui

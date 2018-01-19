@@ -1,17 +1,17 @@
 package gestionprojet.view.ui.Fenetre;
 
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+
 import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
 import gestionprojet.modele.Projet;
+import gestionprojet.view.ui.Panneau.PanneauCalendrier;
 
 public class FenetreGestionDeProjet extends JFrame {
 //-------------Constantes-------------
@@ -20,13 +20,17 @@ public class FenetreGestionDeProjet extends JFrame {
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
 	private Projet currentProject;
+	public PanneauCalendrier panneauCalendrier;
 	
 //-------------Constructeur-------------
+	/**
+	 * constructeur
+	 */
 	public FenetreGestionDeProjet() {
 		this.setTitle(DEFAULT_TITLE);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		//this.afficherCalendrier();
 		this.initMenuBar();
 		
 		this.addMouseListener(new ActionClickDroit(this));
@@ -34,21 +38,36 @@ public class FenetreGestionDeProjet extends JFrame {
 		this.pack();
 	}
 //-------------Getter-------------	
+	/**
+	 * Getter
+	 * @return instance FenetreGestionDeProjet
+	 */
 	public static FenetreGestionDeProjet getInstance(){
 		if (instance==null){
 			instance=new FenetreGestionDeProjet();
 		}
 		return instance;
 	}
+	/**
+	 * Getter
+	 * @return currentProject Projet
+	 */
 	public Projet getProject(){
 		return this.currentProject;
 	}
 	
 //-------------Setter-------------
-public void setProjet(Projet projet){
-	this.currentProject=projet;
-}
+	/**
+	 * Setter
+	 * @param projet Projet
+	 */
+	public void setProjet(Projet projet){
+		this.currentProject=projet;
+	}
 //-------------Methodes-------------
+	/**
+	 * initialisation de la barre de menu
+	 */
 	private void initMenuBar(){
 		//creation de la bar de menu
 		menuBar = new JMenuBar();
@@ -73,7 +92,7 @@ public void setProjet(Projet projet){
 		//Ajout d'un separateur
 		menu.addSeparator();
 		
-		//Ajout des option Ouvrir et Enregistrer (inactive de base) au menu Fichier
+		//Ajout des options Ouvrir et Enregistrer (inactive de base) au menu Fichier
 		menuItem = new JMenuItem("Ouvrir");
 		menuItem.addActionListener(new ActionOuvrir());
 		menu.add(menuItem);
@@ -114,14 +133,20 @@ public void setProjet(Projet projet){
 		menuItem.setEnabled(false);
 		menu.add(menuItem);
 		
-		//Ajout du menu Lot � la bar de menu
+		//Ajout du menu Lot � la barre de menu
 		menuBar.add(menu);
 		
-		//Ajout de la bar � la fen�tre
+		//Ajout de la barre � la fen�tre
 		this.setJMenuBar(menuBar);
 		
 	}
 	
+	public void afficherCalendrier(){
+		if (this.getProject() != null){
+			this.panneauCalendrier= new PanneauCalendrier(this.getProject());
+			this.getContentPane().add(this.panneauCalendrier);
+		}
+	}
 	
 }
 

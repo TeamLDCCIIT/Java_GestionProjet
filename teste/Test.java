@@ -1,4 +1,4 @@
-import javax.swing.JFrame;
+/*import javax.swing.JFrame;
 
 import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Lot;
@@ -35,10 +35,10 @@ public class Test {
 			for(int i = 0; i < p.getLotList().size();i++){
 				System.out.println(p.getLotList().get(i).getName());
 			}
-			/*JFrame.setDefaultLookAndFeelDecorated(true);
+			JFrame.setDefaultLookAndFeelDecorated(true);
 			FenetreCalendrier2 f = new FenetreCalendrier2(p);
-			f.setVisible(true);
-			*/
+			
 	}
 
 }
+*/

@@ -26,7 +26,9 @@ public class PanneauBasProjet extends JPanel {
 	private  ArrayList<Personne> personne = new ArrayList<Personne>();
 	private JTextArea panneau;
 	
-	
+	/**
+	 * Constructeur
+	 */
 	public PanneauBasProjet(){
 		super();
 		this.afficheListe();
@@ -53,7 +55,10 @@ public class PanneauBasProjet extends JPanel {
 		return fonction;
 	}
 
-	public void afficheListe() {
+	/**
+	 * Affiche la liste
+	 */
+	private void afficheListe() {
 		// TODO Auto-generated method stub
 		JPanel panneauList = new JPanel();
 		panneauList.setBackground(new Color(255,0,0));
@@ -64,20 +69,9 @@ public class PanneauBasProjet extends JPanel {
 		
 		
 	}
-
-	
-	public String toString(ArrayList<Personne> personne){
-		System.out.println("Liste des personnes travaillant sur le projet : ");
-		String string = "";
-		for(int i =0; i<personne.size(); i++){
-			string += personne.get(i).getLastName()+" "+personne.get(i).getFirstName()+
-					" - Fonction : "+personne.get(i).getFunction()+"\n";
-			
-		}
-		this.panneau.setText(string);
-		this.panneau.setRows(string.length());
-	return string;
-	}
+	/**
+	 * Initialise le bouton Ajouter
+	 */
 	private void initBoutonAjouter() {
 		JPanel panneauChamp = new JPanel();
 		panneauChamp.setBackground(new Color(150,200,10));
