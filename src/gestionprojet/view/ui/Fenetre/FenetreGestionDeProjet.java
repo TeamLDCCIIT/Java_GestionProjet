@@ -20,7 +20,7 @@ public class FenetreGestionDeProjet extends JFrame {
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
 	private Projet currentProject;
-	private PanneauCalendrier panneauCalendrier;
+	public PanneauCalendrier panneauCalendrier;
 	
 //-------------Constructeur-------------
 	/**

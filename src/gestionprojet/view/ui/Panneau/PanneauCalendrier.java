@@ -17,11 +17,11 @@ import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Projet;
 
 public class PanneauCalendrier extends JPanel {
-
+	
 	
 	
 	// Attributs
-		DefaultTableModel model;
+		public DefaultTableModel model;
 		Calendar calendar = new GregorianCalendar();
 		JLabel label;
 			
