@@ -20,6 +20,7 @@ public class FenetreGestionDeProjet extends JFrame {
 	private static FenetreGestionDeProjet instance;
 	private JMenuBar menuBar;
 	private Projet currentProject;
+	private PanneauCalendrier panneauCalendrier;
 	
 //-------------Constructeur-------------
 	/**
@@ -143,7 +144,8 @@ public class FenetreGestionDeProjet extends JFrame {
 	
 	public void afficherCalendrier(){
 		if (this.getProject() != null){
-			this.getContentPane().add(new PanneauCalendrier(this.getProject()));
+			this.panneauCalendrier= new PanneauCalendrier(this.getProject());
+			this.getContentPane().add(this.panneauCalendrier);
 		}
 	}
 	

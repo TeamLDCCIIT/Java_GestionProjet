@@ -35,7 +35,7 @@ public class ActionCreationP extends AbstractAction{
 		fenetreDeP.setProjet(new Projet(nom, new Calendrier(dateDebut, dateFin)));
 		fenetreDeP.setTitle(nom+"  DU " +dateDebut.toLocaleString()+" AU  " +dateFin.toLocaleString());
 		fenetreDeP.getProject().setLotResponsible(((PanneauBasProjet) fenetreO.getPanneauBas()).getPersonne());
-		//fenetreDeP.afficherCalendrier();
+		fenetreDeP.afficherCalendrier();
 		fenetreDeP.pack();
 		fenetreO.dispose();
 	}
