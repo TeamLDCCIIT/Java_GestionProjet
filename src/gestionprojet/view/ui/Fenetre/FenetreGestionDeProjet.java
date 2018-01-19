@@ -61,7 +61,6 @@ public class FenetreGestionDeProjet extends JFrame {
 		return this.currentProject;
 	}
 	
-	
 //-------------Setter-------------
 	/**
 	 * Setter

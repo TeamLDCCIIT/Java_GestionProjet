@@ -31,7 +31,7 @@ public class ActionAjouterPersonne extends AbstractAction {
 		personne.add(new Personne(nom, prenom, fonction));
 		
 		//TO DO refresh la fen�tre
-		
+		panneauBas.toString(personne);
 		
 	}
 
