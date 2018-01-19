@@ -16,7 +16,7 @@ public class ActionCreerLot extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		FenetreOptionLot fenetre = new FenetreOptionLot(); 
+		FenetreOptionLot fenetre = FenetreOptionLot.getInstance();
 		fenetre.getBoutonValider().setAction(new ActionCreationL());
 		fenetre.getBoutonAnnule().setAction(new ActionAnnuler(fenetre));
 		fenetre.setVisible(true);

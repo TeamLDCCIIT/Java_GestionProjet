@@ -1,15 +1,20 @@
 package gestionprojet.view.ui.Fenetre;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.table.DefaultTableModel;
 
 import gestionprojet.controleur.actions.ActionAnnuler;
 import gestionprojet.controleur.actions.ActionClickDroit;
 import gestionprojet.controleur.actions.ActionCreerLot;
 import gestionprojet.controleur.actions.ActionCreerProjet;
 import gestionprojet.controleur.actions.ActionOuvrir;
+import gestionprojet.modele.Lot;
 import gestionprojet.modele.Projet;
 import gestionprojet.view.ui.Panneau.PanneauCalendrier;
 
@@ -147,6 +152,49 @@ public class FenetreGestionDeProjet extends JFrame {
 			this.panneauCalendrier= new PanneauCalendrier(this.getProject());
 			this.getContentPane().add(this.panneauCalendrier);
 		}
+	}
+	
+	public void refreshTableau() {
+		DefaultTableModel mod = this.panneauCalendrier.model;
+		
+		//Retrait des rows
+		for(int i = 0; i < mod.getRowCount(); i++) {
+			mod.removeRow(i);
+		}
+		
+		//Ajout des lignes
+		for(Lot l : this.getProject().getLotList()) {
+			String[] row = new String[mod.getColumnCount()];
+			row[0] = l.getName();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-yyyy");
+			Date ddebut = l.getStartDate();
+			Date dfin 	= l.getEndDate();
+			
+			for(int i = 1; i < mod.getColumnCount(); i++) {
+				try {
+					String[] ddyyl = mod.getColumnName(i).split(" ");
+					String ddyy = ddyyl[1] + "-" + ddyyl[2];
+					
+					
+					Date date = sdf.parse(ddyy);
+					if(date.getTime() >= ddebut.getTime() - (86400000) && date.getTime() <= dfin.getTime()) {
+						row[i] = "X";
+					} else {
+						row[i] = " ";
+					}
+				} catch(Exception ex) {
+					ex.printStackTrace();
+					row[i] = " _ ";
+				}
+				
+			}
+			
+			mod.addRow(row);
+		}
+		
+		this.panneauCalendrier.model.fireTableDataChanged();
+		this.pack();
+		this.validate();
 	}
 	
 	

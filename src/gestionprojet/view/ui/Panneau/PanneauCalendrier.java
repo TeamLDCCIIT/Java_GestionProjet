@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -13,7 +12,6 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
-import gestionprojet.modele.Calendrier;
 import gestionprojet.modele.Projet;
 
 public class PanneauCalendrier extends JPanel {
@@ -45,16 +43,20 @@ public class PanneauCalendrier extends JPanel {
 			
 			model = new DefaultTableModel(projet.getLotList().size(),0);
 			model.addColumn("Lots");
+			
 			//Ajout des dates dans le tableau
 			for(String item :projet.getCalendar().getDatesBetween()){
 				model.addColumn(item);
 			}
 			
+			
 			//Ajouter les lignes des lots ordonnés
 			for (int k = 0; k < projet.getLotList().size(); k++){
-				model.setValueAt(projet.getLotList().get(k).getName(), k, 0);
+				//model.addRow(row);
+				//model.setValueAt(projet.getLotList().get(k).getName(), k, 0);
 			}
-						
+			
+			
 			//Colorier les cases du tableau pendant la durée d'un lot
 					ArrayList<String> projectDuration = projet.getCalendar().getDatesBetween();
 					ArrayList<String> lotDuration;

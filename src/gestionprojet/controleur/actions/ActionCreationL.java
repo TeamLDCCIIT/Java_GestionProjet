@@ -15,7 +15,7 @@ public class ActionCreationL extends AbstractAction {
 
 	private static final long serialVersionUID = 1L;
 	public static final String NOM_ACTION ="Valider";
-	
+
 	public ActionCreationL(){
 		super(NOM_ACTION);
 	}
@@ -25,19 +25,19 @@ public class ActionCreationL extends AbstractAction {
 		Date dateDebut;
 		Date dateFin;
 		String description;
-		
+
 		FenetreGestionDeProjet fenetreDeP = FenetreGestionDeProjet.getInstance();
 		FenetreOptionLot fenetreO = FenetreOptionLot.getInstance();
-		
+
 		nom = ((PanneauHautLot) fenetreO.getPanneauHaut()).getNom().getText();
 		dateDebut= (Date) ((PanneauHautLot) fenetreO.getPanneauHaut()).getDateDebut().getModel().getValue();
 		dateFin = (Date) ((PanneauHautLot) fenetreO.getPanneauHaut()).getDateFin().getModel().getValue();
 		description = ((PanneauHautLot) fenetreO.getPanneauHaut()).getDescription().getText();
 		fenetreDeP.getProject().getLotList().add(new Lot(nom, dateDebut,dateFin,description));
-		fenetreDeP.panneauCalendrier.model.fireTableDataChanged();
-		fenetreDeP.validate();
-		System.out.println("ok");
-		}
+		fenetreO.dispose();
 
-	
+		fenetreDeP.refreshTableau();
+	}
+
+
 }
