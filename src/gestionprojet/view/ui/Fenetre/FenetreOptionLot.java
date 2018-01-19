@@ -37,5 +37,13 @@ public class FenetreOptionLot extends FenetreOption {
 			this.getContentPane().add(this.getPanneauBas());
 			
 		}
+
+		@Override
+		void initPanneauHaut() {
+			this.setPanneauHaut(new PanneauHautLot());
+			this.getPanneauHaut().setVisible(true);
+			this.getContentPane().add(this.getPanneauHaut());
+			
+		}
 	
 }

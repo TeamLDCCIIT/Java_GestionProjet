@@ -13,11 +13,10 @@ import gestionprojet.view.ui.Panneau.PanneauBasProjet;
 
 public class ActionAjouterPersonne extends AbstractAction {
 	public static final String NOM_ACTION = "Ajouter";
-	private Projet projet;
 	/**
 	 * @param projet
 	 */
-	public ActionAjouterPersonne(Projet projet){
+	public ActionAjouterPersonne(){
 		super(NOM_ACTION);
 	}
 	

@@ -72,7 +72,6 @@ public class PanneauBasProjet extends JPanel {
 
 	
 	public String toString(ArrayList<Personne> personne){
-		System.out.println("Liste des personnes travaillant sur le projet : ");
 		String string = "";
 		for(int i =0; i<personne.size(); i++){
 			string += personne.get(i).getLastName()+" "+personne.get(i).getFirstName()+
