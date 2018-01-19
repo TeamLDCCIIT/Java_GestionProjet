@@ -56,7 +56,6 @@ public class FenetreGestionDeProjet extends JFrame {
 		return this.currentProject;
 	}
 	
-	
 //-------------Setter-------------
 	/**
 	 * Setter
@@ -148,7 +147,6 @@ public class FenetreGestionDeProjet extends JFrame {
 			this.getContentPane().add(this.panneauCalendrier);
 		}
 	}
-	
 	
 }
 
