@@ -44,7 +44,6 @@ public class FenetreGestionDeProjet extends JFrame {
 		return this.currentProject;
 	}
 	
-	
 //-------------Setter-------------
 public void setProjet(Projet projet){
 	this.currentProject=projet;
@@ -122,7 +121,6 @@ public void setProjet(Projet projet){
 		this.setJMenuBar(menuBar);
 		
 	}
-	
 	
 	
 }

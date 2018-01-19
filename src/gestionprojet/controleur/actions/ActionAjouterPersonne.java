@@ -27,8 +27,8 @@ public class ActionAjouterPersonne extends AbstractAction {
 		ArrayList<Personne> personne = panneauBas.getPersonne();
 		personne.add(new Personne(nom, prenom, fonction));
 		
-		//TO DO refresh la fenêtre
-		
+		//TO DO refresh la fenï¿½tre
+		panneauBas.toString(personne);
 		
 	}
 

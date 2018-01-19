@@ -1,5 +1,6 @@
 package gestionprojet.view.ui.Panneau;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
@@ -10,9 +11,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import gestionprojet.modele.Lot;
+import gestionprojet.controleur.actions.ActionAjouterPersonne;
 import gestionprojet.modele.Personne;
 
 public class PanneauBasProjet extends JPanel {
@@ -21,6 +24,8 @@ public class PanneauBasProjet extends JPanel {
 	private JTextField prenom;
 	private JTextField fonction;
 	private  ArrayList<Personne> personne = new ArrayList<Personne>();
+	private JTextArea panneau;
+	
 	
 	public PanneauBasProjet(){
 		super();
@@ -53,7 +58,10 @@ public class PanneauBasProjet extends JPanel {
 		JPanel panneauList = new JPanel();
 		panneauList.setBackground(new Color(255,0,0));
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		panneau = new JTextArea();
+		panneauList.add(panneau);
 		this.add(panneauList);
+		
 		
 	}
 
@@ -66,6 +74,8 @@ public class PanneauBasProjet extends JPanel {
 					" - Fonction : "+personne.get(i).getFunction()+"\n";
 			
 		}
+		this.panneau.setText(string);
+		this.panneau.setRows(string.length());
 	return string;
 	}
 	private void initBoutonAjouter() {
@@ -73,6 +83,9 @@ public class PanneauBasProjet extends JPanel {
 		panneauChamp.setBackground(new Color(150,200,10));
 		panneauChamp.setLayout(new BoxLayout(panneauChamp, BoxLayout.LINE_AXIS));
 		panneauChamp.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		JScrollPane pane = new JScrollPane(panneauChamp);
+		this.add(pane, BorderLayout.EAST);
+		pane.setVisible(true);
 		panneauChamp.add(Box.createHorizontalGlue());
 		panneauChamp.add(new JLabel("Nom : "));
 		panneauChamp.add(Box.createRigidArea(new Dimension(5, 0)));
@@ -92,7 +105,7 @@ public class PanneauBasProjet extends JPanel {
 		panneauChamp.add(fonction);
 		
 		panneauChamp.add(Box.createRigidArea(new Dimension(20, 0)));
-		panneauChamp.add(new JButton("Ajouter"));
+		panneauChamp.add(new JButton(new ActionAjouterPersonne()));
 		
 		this.add(panneauChamp);
 		this.setBackground(new Color(0,0,0));
